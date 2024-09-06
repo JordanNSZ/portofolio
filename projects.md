@@ -14,9 +14,9 @@ title: Projects
   	</ul>
   	<h2>Projets récents</h2>
 	<ul>
-  		<li>Teleco Chrun prediction</li>
-  		<li>Data scraping - Extracting data from hundreds of pdf files.</li>
-  		<li>Extraction of real estate advertisement data - ETL</li>
-  		<li>Extraction of real estate advertisement data - ELT</li>
-  	</ul>
+		<li>Teleco Chrun prediction</li>
+		<li>Data scraping - Extracting data from hundreds of pdf files.</li>
+		<li>Extraction of real estate advertisement data - ETL</li>
+		<li>Extraction of real estate advertisement data - ELT</li>
+	</ul>
 </div>
