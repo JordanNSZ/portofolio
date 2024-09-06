@@ -278,12 +278,12 @@ DARK THEME STYLING
 
 @media (prefers-color-scheme: dark) {
 	body {
-		background-color: #c6cdf5;
+		background-color: #c6cdf5; //change la couleur du fond sous le titre seulement
 		color: white;
 	}
 
 	.content:after,
 	.post .featuredImage:before {
-		background: black;
+		background: #c6cdf5;
 	}
 }
