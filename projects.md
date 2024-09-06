@@ -5,7 +5,7 @@ title: Projects
 
 <div class="post">
 	<h1 class="pageTitle">Mes projets</h1>
-	<img src="{{ '/assets/img/touring.jpg' | relative_url }}" alt="">
+
 	<p class="intro">Vous trouverez sur cette page mes projets récents en ingénierie et science des données. <b>Bonne lecture !</b>
 	<p> Si vous avez des questions ou des commentaires, n'hésitez pas à me  <a href="mailto:jordan.nagadzina.sanchez@gmail.com">contacter</a>.</p>
 	<h2>Projets en cours</h2>
