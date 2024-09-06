@@ -3,7 +3,7 @@ layout: default
 title: Projects
 ---
 
-<div class="home">
+<div class="post">
 	<h1 class="pageTitle">Mes projets</h1>
 
 	<p class="intro">Vous trouverez sur cette page mes projets récents en ingénierie et science des données. <b>Bonne lecture !</b>
@@ -18,4 +18,5 @@ title: Projects
 			<li>Data scraping - Extracting data from hundreds of pdf files.</li>
 			<li>Extraction of real estate advertisement data - ETL</li>
 			<li>Extraction of real estate advertisement data - ELT</li>
-		</ul> </div>
+		</ul>
+	</div>
