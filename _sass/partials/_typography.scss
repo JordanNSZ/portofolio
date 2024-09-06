@@ -26,7 +26,7 @@ h1, .h1 {
   h1, .h1 {
     font-size: 2.5em; // 2.5x body copy size = 40px
     line-height: 1.125;
-    color: #5566c2; //essai à supprimer te pose pas de question
+    // color: #5566c2;essai à supprimer 
   }
 }
 
@@ -40,7 +40,7 @@ h1, .h1 {
 h2, .h2 {
   font-size: 1.6em; // 1.625x body copy size = 26px 
   line-height: 1.15384615; // 30px / 26px
-  color: #2a6099;
+  color: #340de0;
 }
 
 @media (min-width: 43.75em) {
@@ -60,7 +60,7 @@ h2, .h2 {
 h3, .h3 {
   font-size: 1.3em; // 1.375x body copy size = 22px
   line-height: 1.13636364; //25px / 22px
-  color: #2a6099;
+  color: #340de0;
 }
 
 @media (min-width: 43.75em) {
@@ -80,7 +80,7 @@ h3, .h3 {
 h4, .h4 {
   font-size: 1.125em; // 1.125x body copy size = 18px
   line-height: 1.11111111;
-  color: #2a6099;
+  color: #340de0; //#2a6099
 }
 
 @media (min-width: 43.75em) {
