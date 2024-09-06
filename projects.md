@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Projects Long Haul
+title: Projects
 ---
 
 <div class="post">
 	<h1 class="pageTitle">Mes projets</h1>
 	<img src="{{ '/assets/img/touring.jpg' | relative_url }}" alt="">
-	<p class="intro">Passionné par la statistique, je suis le créateur de la chaîne <a href="www.linkedin.com/in/Statisserie">**Statisserie**</a>. Mon objectif : rendre la statistique utile et accessible à toutes et tous. Vous trouverez sur cette page quelques posts récents liés à cette chaîne et plus encore. Bonne lecture ! Et n'oubliez pas : la statistique c'est comme la patisserie, dans les bonnes conditions et avec les bons ingrédients on fait des choses formidable.</p>
+	<p class="intro">Vous trouverez sur cette page mes projets récents en ingénierie et science des données. <b>Bonne lecture !</b>
 	<p> Si vous avez des questions ou des commentaires, n'hésitez pas à me  <a href="mailto:jordan.nagadzina.sanchez@gmail.com">contacter</a>.</p>
 	<h2>Projets en cours</h2>
 	<ul>

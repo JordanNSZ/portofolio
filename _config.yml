@@ -1,5 +1,5 @@
-title: Jordan Nagadzina-Sanchez Data Consulting
-description: Welcome to my personal page! You'll find my posts and projects. One of my latest projects is the extraction of real estate advertisement data for the 5 largest cities in France. The data is then used in an ETL process (transformed with python and loaded on Google Clood BigQuery) and an ELT process (using SQLAlchemy data is loaded on postgreSQL then transformed with DBT). This provides ready-to-use data for the development of reports and dashboards. Finally, this project aims to create an application (REST API) for predicting rental prices. Don't hesitate to follow my progress. If you'd like to get in touch, go to the contact page.
+title: Jordan Nagadzina-Sanchez - Consultant Data
+description: Welcome to my personal page! You'll find my posts and projects.
 
 url: https://long-haul.netlify.app
 # Only necessary when hosting your site in a sub-directory. Project sites hosted on GitHub Pages are the common use-case of this variable.

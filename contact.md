@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Contact Long Haul
+title: Contact
 ---
 
 <div id="contact">
-  <h1 class="pageTitle">Contact Me</h1>
+  <h1 class="pageTitle">Mes coordonnées</h1>
   <div class="contactContent">
-    <p class="intro">Si vous souhaitez des informations quant à ma disponibilité et les tarifs d'une prestation, envoyer moi un <a href="mailto:jordan.nagadzina.sanchez@gmail.com">mail</a> ou contactez moi sur <a href="www.linkedin.com/in/jordannagadzina-sanchez"> LinkedIn </a>. Merci. </p>
+    <p class="intro">Si vous souhaitez des informations quant à ma disponibilité et le tarif d'une prestation, envoyer moi un <a href="mailto:jordan.nagadzina.sanchez@gmail.com">mail</a> ou contactez moi sur <a href="www.linkedin.com/in/jordannagadzina-sanchez"> LinkedIn </a>. Merci. </p>
     <p> Sinon, remplissez simplement le formulaire suivant.</p>
   </div>
   <form action="http://formspree.io/your@mail.com" method="POST">
