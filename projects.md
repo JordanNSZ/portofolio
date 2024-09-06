@@ -19,4 +19,4 @@ title: Projects
 			<li>Extraction of real estate advertisement data - ETL</li>
 			<li>Extraction of real estate advertisement data - ELT</li>
 		</ul>
-	</div>
+
