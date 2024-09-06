@@ -29,7 +29,7 @@ $primary-color: #2a6099;
 $secondary-color: #233E5B;
 $tertiary-color: #aaa;
 $link-color: $primary-color;
-$background-color: #c3c8e8;
+$background-color: $primary-color; /*pas celle du site*/
 
 $bad-color: $red; // Bad color for errors, validation etc.
 $good-color: $green; // Good color for success etc.
