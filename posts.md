@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Posts
+image: ""
 ---
 
 <div class="post">
