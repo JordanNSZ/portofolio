@@ -18,5 +18,4 @@ title: Projects
 			<li>Data scraping - Extracting data from hundreds of pdf files.</li>
 			<li>Extraction of real estate advertisement data - ETL</li>
 			<li>Extraction of real estate advertisement data - ELT</li>
-		</ul>
-</div>
+		</ul> </div>
