@@ -15,20 +15,20 @@ title: About Me
     <h3>Expériences professionnelles</h3>
     <ul>
         <h4>Emplois</h4>
-        <ul>
+       
             <li>Doctorant-Chercheur - Université Jean-Monnet (Saint-Étienne). (Oct. 2020-Sept. 2023)</li>
             <li>Enseignant Macroéconomie monétaire et financière - EM Lyon Business School (Mars 2022-Mai 2022)</li>
             <li>Enseignant Environnement Économique (macroéconomie) - IUT Roannes (Oct. 2021-Mai 2022)</li>
-        </ul>
+      
 
 
         <h4>Stages</h4>
-        <ul>
+       
           <li>Assistant de recherche - GATE-LSE/CNRS (Lyon) (Mai 2019-Juillet 2019)</li>
           <li>Assistant Gestionnaire de patrimoine - Couleur Patrimoine (Lyon) (Nov. 2016-Fév. 2017)</li>
-        </ul>
-
     </ul>
+
+
   	<h3>Bénévolats</h3>
 	<ul>
         <li>Membre de la Commission Recherche Université Jean Monnet de Saint-Étienne - Réprésentant des doctorants (Mars 2021- Mars 2023)</li>
