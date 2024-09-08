@@ -21,11 +21,11 @@ paginate: 3 #3 articles affichés par page.
 navigation:
     - title: Home
       url: /index.html
-    - title: About
+    - title: About me
       url: /about
     - title: Projects
       url: /projects
-    - title: Posts
+    - title: Articles
       url: /posts
     - title: Contact
       url: /contact

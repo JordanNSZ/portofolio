@@ -9,13 +9,13 @@ image: ""
 	<p class="intro">Passionné par la statistique, je suis le créateur de la chaîne <a href="www.linkedin.com/in/Statisserie"><b>Statisserie</b></a>. Mon objectif : rendre la statistique utile et accessible à toutes et tous. Vous trouverez sur cette page quelques posts récents liés à cette chaîne et plus encore. <b>Bonne lecture !</b> </p>
 	<p> Et n'oubliez pas : <i>la statistique c'est comme la pâtisserie, dans les bonnes conditions et avec les bons ingrédients on fait des choses formidables</i>.</p>
 	<p> Si vous avez des questions ou des commentaires, n'hésitez pas à me  <a href="mailto:jordan.nagadzina.sanchez@gmail.com">contacter</a>.</p>
-	<h2>Posts à venir</h2>
+	<h4>Posts à venir</h4>
 	<ul>
 		<li>L'ANCOVA en pratique.</li>
   		<li>RFM et CLV.</li>
   		<li>RANK() vs DENSE_RANK()</li>
   	</ul>
-  	<h2>Posts récents</h2>
+  	<h3>Posts récents</h3>
 	<ul>
 		<li>Le test de Kruskal-Wallis : une alternative non-paramétrique à l'Anova.</li>
 		<li>Les fonctions de fenêtrage en SQL.</li>

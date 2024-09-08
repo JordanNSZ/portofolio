@@ -4,10 +4,10 @@ title: Projects
 ---
 
 <div class="post">
-	<h1 class="pageTitle">Mes projets</h1>
+	<h1 class="pageTitle"></h1>
 
 	<p class="intro">Vous trouverez sur cette page mes projets récents en ingénierie et science des données. <b>Bonne lecture !</b>
-	<p> Si vous avez des questions ou des commentaires, n'hésitez pas à me  <a href="mailto:jordan.nagadzina.sanchez@gmail.com">contacter</a>.</p>
+	<p> Si vous avez des questions ou des commentaires,  <a href="mailto:jordan.nagadzina.sanchez@gmail.com">contactez-moi</a>.</p>
 	<h2>Projets en cours</h2>
 		<ul>
 			<li>Renting price prediction for the five biggest cities of France</li>
