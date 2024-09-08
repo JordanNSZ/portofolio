@@ -2,10 +2,12 @@
 layout: default
 title: Contact
 ---
+<div class="post">
+<img src="{{ '/assets/img/pp.jpg' | relative_url }}" alt="">
+</div>
 
 <div id="contact">
   <h1 class="pageTitle"></h1>
-
   <div class="contactContent">
     <p class="intro">Si vous souhaitez des informations quant à ma disponibilité et le tarif d'une prestation, envoyer moi un <a href="mailto:jordan.nagadzina.sanchez@gmail.com">mail</a> ou contactez moi sur <a href="www.linkedin.com/in/jordannagadzina-sanchez"> LinkedIn </a>. Merci. </p>
     <p> Sinon, remplissez simplement le formulaire suivant.</p>
