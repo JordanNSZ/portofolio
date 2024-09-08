@@ -13,8 +13,6 @@ body {
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   margin: .5rem 0 1.5rem;
   font-family: $sans-serif;
-  background-color: #ffc; /* Exemple de couleur de fond pour surligner */
-  color: #2e3436;
 }
 
 // Headings
@@ -42,7 +40,8 @@ h1, .h1 {
 h2, .h2 {
   font-size: 1.6em; // 1.625x body copy size = 26px 
   line-height: 1.15384615; // 30px / 26px
-  color: #2a6099;
+  color: #e6f4fc;
+  background: #2a6099;
 }
 
 @media (min-width: 43.75em) {
@@ -60,7 +59,7 @@ h2, .h2 {
 }
 
 h3, .h3 {
-  font-size: 1.375em; // 1.375x body copy size = 22px
+  font-size: 1.555em; // 1.375x body copy size = 22px
   line-height: 1.13636364; //25px / 22px
   color: #2a6099;
 }
@@ -80,7 +79,7 @@ h3, .h3 {
 }
 
 h4, .h4 {
-  font-size: 1.335em; // 1.125x body copy size = 18px
+  font-size: 1.5em; // 1.125x body copy size = 18px
   line-height: 1.11111111;
   color: #2a6099; //#2a6099
 }
@@ -91,7 +90,7 @@ h4, .h4 {
   }
 }
 h5, .h5 {
-  font-size: 1.3em; // 1.125x body copy size = 18px
+  font-size: 1.4em; // 1.125x body copy size = 18px
   line-height: 1.11111111;
   color: #2a6099; //#2a6099
 }
@@ -102,7 +101,7 @@ h5, .h5 {
   }
 }
 h6, .h6 {
-  font-size: 1.275em; // 1.125x body copy size = 18px
+  font-size: 1.3em; // 1.125x body copy size = 18px
   line-height: 1.11111111;
   color: #2a6099; //#2a6099
 }
