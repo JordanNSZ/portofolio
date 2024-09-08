@@ -7,8 +7,9 @@ title: About Me
 	<h1 class="pageTitle"></h1>
 	<p class="intro">Data scientist, passionné par la statistique et les données, je suis le créateur de la chaîne <a href="www.linkedin.com/in/Statisserie"><b>Statisserie</b></a>. Mon objectif : acquérir des données et les transformer en informations claires et exploitables. </p>
 	<p> À la recherche d'une <b>expertise analytique</b> ou simplement l'envie d'explorer mes publications ? N'hésitez pas à me  <a href="mailto:jordan.nagadzina.sanchez@gmail.com">contacter</a> pour discuter de vos projets et de vos besoins en analyse de données !</p>
-	<p></p>
-	<p></p>
+	<p>   </p>
+	<p>   </p>
+	
 	<h1 class="pageTitle">Mon CV</h1>
 	<p> Si vous souhaitez accéder à une version détaillée de mon cv, consulter ce <a href="https://github.com/JordanNSZ/portofolio/linkedin.pdf"><b>pdf</b></a> ou rendez-vous sur <a href="www.linkedin.com/in/jordannagadzina-sanchez"><b>linkedin</b></a>. </p>
     <h3>Expériences professionnelles</h3>

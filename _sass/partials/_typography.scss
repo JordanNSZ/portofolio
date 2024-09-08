@@ -58,7 +58,7 @@ h2, .h2 {
 }
 
 h3, .h3 {
-  font-size: 1.3em; // 1.375x body copy size = 22px
+  font-size: 1.375em; // 1.375x body copy size = 22px
   line-height: 1.13636364; //25px / 22px
   color: #2a6099;
 }
@@ -78,13 +78,35 @@ h3, .h3 {
 }
 
 h4, .h4 {
-  font-size: 1.125em; // 1.125x body copy size = 18px
+  font-size: 1.335em; // 1.125x body copy size = 18px
   line-height: 1.11111111;
   color: #2a6099; //#2a6099
 }
 
 @media (min-width: 43.75em) {
   h4, .h4 {
+    line-height: 1.22222222; // 22px / 18px
+  }
+}
+h5, .h5 {
+  font-size: 1.3em; // 1.125x body copy size = 18px
+  line-height: 1.11111111;
+  color: #2a6099; //#2a6099
+}
+
+@media (min-width: 43.75em) {
+  h5, .h5 {
+    line-height: 1.22222222; // 22px / 18px
+  }
+}
+h6, .h6 {
+  font-size: 1.275em; // 1.125x body copy size = 18px
+  line-height: 1.11111111;
+  color: #2a6099; //#2a6099
+}
+
+@media (min-width: 43.75em) {
+  h6, .h6 {
     line-height: 1.22222222; // 22px / 18px
   }
 }
