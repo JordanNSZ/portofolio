@@ -9,15 +9,18 @@ image: ""
 	<p class="intro">Passionné par la statistique, je suis le créateur de la chaîne <a href="www.linkedin.com/in/Statisserie"><b>Statisserie</b></a>. Mon objectif : rendre la statistique utile et accessible à toutes et tous. Vous trouverez sur cette page quelques posts récents liés à cette chaîne et plus encore. <b>Bonne lecture !</b> </p>
 	<p> Et n'oubliez pas : <i>la statistique c'est comme la pâtisserie, dans les bonnes conditions et avec les bons ingrédients on fait des choses formidables</i>.</p>
 	<p> Si vous avez des questions ou des commentaires, n'hésitez pas à me  <a href="mailto:jordan.nagadzina.sanchez@gmail.com">contacter</a>.</p>
-	<h4>Posts à venir</h4>
 	<ul>
+	<h4>Posts à venir</h4>
+	</ul>
 		<li>L'ANCOVA en pratique.</li>
   		<li>RFM et CLV.</li>
   		<li>RANK() vs DENSE_RANK()</li>
-  	</ul>
+  	<ul>
   	<h3>Posts récents</h3>
-	<ul>
+  	</ul>
+	    <li> <href="/_posts/git.md"> How to GIT ? Le versioning c'est la vie. </href> </li>
 		<li>Le test de Kruskal-Wallis : une alternative non-paramétrique à l'Anova.</li>
+		<li><href="/_posts/outliers-detection.md">Les outliers : détection, qualification et traitement.</href> </li>
 		<li>Les fonctions de fenêtrage en SQL.</li>
   		<li>La segmentation client</li>
   		<li>Les CTES, explications et cas d'usage.</li>
@@ -25,7 +28,7 @@ image: ""
   		<li>Le test t de Student et le test de Welch - test d'homogénéité.</li>
   		<li>Un test statistique, c'est quoi ?</li>
         <li>Tests d'homogénéité, le cas d'échantillons qualitatifs.</li>
-        <li>Fusion et Acquisition de données en SQL.</li>
+        <li><href="/_posts/sql-join.md"> Fusion et acquisition de données en SQL.</href></li>
   		<li>COUNT, explications et cas d'usage.</li>
-  	</ul>
+  		<li><href = "/_posts/snap_firefox.md"> Uninstall the snap firefox and let geckodriver find your profile. </href></li>
 </div>
