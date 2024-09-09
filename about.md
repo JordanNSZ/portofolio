@@ -32,7 +32,7 @@ title: About Me
   	<h3>Bénévolats</h3>
 	<ul>
         <li>Membre de la Commission Recherche Université Jean Monnet de Saint-Étienne - Réprésentant des doctorants (Mars 2021- Mars 2023)</li>
-        <li>Membre du Conseil d'UFR Université Lumière Lyon 2 - Student representative (Mars 2017-Sept. 2020</li>
+        <li>Membre du Conseil d'UFR Université Lumière Lyon 2 - Représentant étudiant (Mars 2017-Sept. 2020)</li>
         <li>Vice-Président - ASEC (Oct. 2021-Déc. 2022)</li>
         <li> Co-fondateur et Président - Association APE (Juil. 2018 - Juin. 2020)</li>
         <li> Co-fondateur et trésorier - BDE SEG (Mars 2016-Mai 2018)</li>

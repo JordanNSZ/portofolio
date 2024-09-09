@@ -18,9 +18,9 @@ image: ""
   	<ul>
   	<h3>Posts récents</h3>
   	</ul>
-	    <li> <href="/_posts/git.md"> How to GIT ? Le versioning c'est la vie. </href> </li>
+	    <li> <a href="/_posts/git.md"> How to GIT ? Le versioning c'est la vie. </a> </li>
 		<li>Le test de Kruskal-Wallis : une alternative non-paramétrique à l'Anova.</li>
-		<li><href="/_posts/outliers-detection.md">Les outliers : détection, qualification et traitement.</href> </li>
+		<li><a href="/_posts/outliers-detection.md">Les outliers : détection, qualification et traitement.</a> </li>
 		<li>Les fonctions de fenêtrage en SQL.</li>
   		<li>La segmentation client</li>
   		<li>Les CTES, explications et cas d'usage.</li>
@@ -28,7 +28,7 @@ image: ""
   		<li>Le test t de Student et le test de Welch - test d'homogénéité.</li>
   		<li>Un test statistique, c'est quoi ?</li>
         <li>Tests d'homogénéité, le cas d'échantillons qualitatifs.</li>
-        <li><href="/_posts/sql-join.md"> Fusion et acquisition de données en SQL.</href></li>
+        <li><a href="/_posts/sql-join.md"> Fusion et acquisition de données en SQL.</a></li>
   		<li>COUNT, explications et cas d'usage.</li>
-  		<li><href = "/_posts/snap_firefox.md"> Uninstall the snap firefox and let geckodriver find your profile. </href></li>
+  		<li><a href = "/_posts/snap_firefox.md"> Uninstall the snap firefox and let geckodriver find your profile. </a></li>
 </div>
