@@ -198,7 +198,7 @@ Pour trouver l'**écart absolu à la médiane**, voici les étapes à suivre :
 
 4. Calculez la médiane de cette différences absolue.
 
-<blblockquote> La MAD est donc définie comme la médiane des écarts absolus par rapport à la médiane des données.</blockquote>
+<blockquote> La MAD est donc définie comme la médiane des écarts absolus par rapport à la médiane des données.</blockquote>
 
 Formellement,
 

@@ -165,9 +165,14 @@ POST STYLING
 	p,
 	ul,
 	ol,
-	dl,
-	.pageTitle {
+	.dl {
 		width: 100%;
+		float: none;
+		margin: 0 auto 2rem;
+	}
+	
+	.pageTitle {
+		width: 75%;
 		float: none;
 		margin: 0 auto 2rem;
 	}
