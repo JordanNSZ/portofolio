@@ -198,7 +198,7 @@ Pour trouver l'**écart absolu à la médiane**, voici les étapes à suivre :
 
 4. Calculez la médiane de cette différences absolue.
 
-<blockquote> La MAD est donc définie comme la médiane des écarts absolus par rapport à la médiane des données.</blockquote>
+> La MAD est donc définie comme la médiane des écarts absolus par rapport à la médiane des données.
 
 Formellement,
 
@@ -210,7 +210,7 @@ Voici la formule du score Z modifié :
 
 $$Z = 0.6745 \frac{(x_{i} - med(X))}{MAD}.$$
 
-<p> Vous observez le coefficient $0.6745$ qui permet d'**approximer un équivalent médiane de l'écart-type**. Je m'explique : en multipliant l'écart à la médiane en unité de MAD par le coefficient $\frac{1}{O.67449} \approx 1.4826$ on s'assure que la MAD sera approximativement équivalente (au moins asymptotiquement) à l'estimateur standard de l'écart-type pour une distribution normale. Ce processus va nous permettre de **fixer un seuil** en nous appuyant sur les **quantiles de la distribution normale centrée-réduite** et d'interpréter le score Z modifié comme le score Z. Par exemple, si un individu pour une variable donnée obtient un score de 2, plus de 95% des individus seront inférieur à lui en valeur absolue.</p>
+Vous observez le coefficient $0.6745$ qui permet d'**approximer un équivalent médiane de l'écart-type**. Je m'explique : en multipliant l'écart à la médiane en unité de MAD par le coefficient $\frac{1}{O.67449} \approx 1.4826$ on s'assure que la MAD sera approximativement équivalente (au moins asymptotiquement) à l'estimateur standard de l'écart-type pour une distribution normale. Ce processus va nous permettre de **fixer un seuil** en nous appuyant sur les **quantiles de la distribution normale centrée-réduite** et d'interpréter le score Z modifié comme le score Z. Par exemple, si un individu pour une variable donnée obtient un score de 2, plus de 95% des individus seront inférieur à lui en valeur absolue.
 
 Avantages du score Z modifié/robuste :
 1. Les données peuvent ne pas être normalement distribuées ;
@@ -219,6 +219,7 @@ Avantages du score Z modifié/robuste :
 4. Toutefois, les deux scores peuvent établir différent outliers. Cela est du au fait que la médiane est moins sensible aux valeurs extrêmes, donc il se peut que davantage de points se révèlent être des outliers avec le score Z modifié. 
 
 Dans l'exemple qui suit nous avons calculé le score Z modifié.
+
 ```python
 def robust_z_score(variable="log_price", df=df):
     med = df[variable].median()
@@ -242,8 +243,10 @@ for i in range(3,5):
 Avec un seuil de 3 : 60767 outliers.
 Avec un seuil de 4 : 63 outliers.
 ```
+
 Cette fonction calcule, pour chaque observation d'une variable, le score Z modifié. L'ensemble des scores sont ajoutées à une liste. Cette liste permet d'implémenter la variable "*modified_z_score*" dans la base de données. Finalement, une boucle nous permet d'évaluer le nombre d'outliers potentiels avec une valeur seuil de *3* ou *4*.
 Avec un seuil de 3, le nombre d'outliers est très important. Cela est du au fait que la médiane est moins sensible aux valeurs extrêmes. Par contre, avec une **valeur seuil de 4**, on dénombre **63 outliers**. Vous pouvez accéder à leurs indices comme ceci :
+
 ```python
 indices = anomalies.index.to_list()
 df.iloc[indices] 
