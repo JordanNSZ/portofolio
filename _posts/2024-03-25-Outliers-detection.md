@@ -246,7 +246,6 @@ Avec un seuil de 4 : 63 outliers.
 
 Cette fonction calcule, pour chaque observation d'une variable, le score Z modifié. L'ensemble des scores sont ajoutées à une liste. Cette liste permet d'implémenter la variable "*modified_z_score*" dans la base de données. Finalement, une boucle nous permet d'évaluer le nombre d'outliers potentiels avec une valeur seuil de *3* ou *4*.
 Avec un seuil de 3, le nombre d'outliers est très important. Cela est du au fait que la médiane est moins sensible aux valeurs extrêmes. Par contre, avec une **valeur seuil de 4**, on dénombre **63 outliers**. Vous pouvez accéder à leurs indices comme ceci :
-
 ```python
 indices = anomalies.index.to_list()
 df.iloc[indices] 
@@ -516,20 +515,20 @@ On observe une distribution relativement identique à celle de l'échantillon co
 ![Histogramme]({{ site.baseurl }}/assets/img/outliers_detection/histogram_subsample.png)
 
 Afin d'illustrer mon propos je vous propose d'observer l'évolution de la distribution à mesure que le nombre d'outliers croît et que ces derniers sont imputer par la moyenne de la série initiale, soit 4.7075. Nous allons considérer que successivement 10, 30, 50 et 100 outliers se trouvent dans les queues de notre distribution. Sur chaque graphique, la médiane initiale sera représentée en bleue, la moyenne initiale en rouge et la moyenne après imputation en vert. Voici les graphiques représentant les distributions après imputation des outliers par la moyenne : 
-![Histogramme du logarithme des prix des logements Airbnb \(sous-échantillon, n=500\).](/assets/img/outliers_detection/histogram_10outliers.png)
+![Histogramme après imputation de 10 outliers par la moyenne.](/assets/img/outliers_detection/histogram_10outliers.png)
 ![Histogramme]({{ site.baseurl }}/assets/img/outliers_detection/histogram_10outliers.png)
 
-![Histogramme du logarithme des prix des logements Airbnb \(sous-échantillon, n=500\).](/assets/img/outliers_detection/histogram_30outliers.png)
+![Histogramme après imputation de 30 outliers par la moyenne.](/assets/img/outliers_detection/histogram_30outliers.png)
 ![Histogramme]({{ site.baseurl }}/assets/img/outliers_detection/histogram_30outliers.png)
 
-![Histogramme du logarithme des prix des logements Airbnb \(sous-échantillon, n=500\).](/assets/img/outliers_detection/histogram_50outliers.png)
+![Histogramme après imputation de 50 outliers par la moyenne.](/assets/img/outliers_detection/histogram_50outliers.png)
 ![Histogramme]({{ site.baseurl }}/assets/img/outliers_detection/histogram_50outliers.png)
 
-![Histogramme du logarithme des prix des logements Airbnb \(sous-échantillon, n=500\).](/assets/img/outliers_detection/histogram_100outliers.png)
+![Histogramme après imputation de 100 outliers par la moyenne.](/assets/img/outliers_detection/histogram_100outliers.png)
 ![Histogramme]({{ site.baseurl }}/assets/img/outliers_detection/histogram_100outliers.png)
 
 ![Résultat de l'imputation des outliers par la moyenne \(sous-échantillon, n=500\).](/assets/img/outliers_detection/histogram_imputation_moyenne.png)
-
+![Histogramme]({{ site.baseurl }}/assets/img/outliers_detection/histogram_imputation_moyenne.png)
 Principales conclusions de cette démonstration.
 
 À mesure que le **nombre d'outliers croît**, l'impact de l'imputation par la moyenne se fait plus grand :
