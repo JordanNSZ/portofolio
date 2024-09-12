@@ -186,7 +186,7 @@ Ce dernier point m'amène à vous proposer une autre mesure du "lointain" d'une 
 
 Personnelement, je suis très prudent quant à l'usage de tehcnique quantitative conditionnelle à la distribution des données - i.e. **tests paramétriques**. En effet, ces techniques sont peu robustes en cela qu'elles sont très sensible aux outliers (les revoilà ceux-là!) et aux défauts de normalités - i.e. asymétrie, par exemple. Pour cette raison, et puisqu'il existe très souvent (pour ne pas dire toujours) **une alternative robuste**, il peut être prudent d'utiliser une **alternative non-paramétrique** en substitution/complément. Par exemple, dans le cadre des tests d'homogénéité de deux moyennes, une alternative au test t de Student existe, le test de Wilcoxon-Mann-Withney. Ce dernier est robuste puisqu'il ne suppose pas de distribution des échantillons et qu'il compare les distributions d'après les rangs de leurs observations.
 
-Vous me voyez venir ? Le **score Z robuste** est simplement une alternative qui prend en compte la médiane plutôt que la moyenne. Mais, me direz-vous : si on prend en compte la médiane, mesurer l'écart à celle-ci qui plus est en unité d'écart type n'a pas de sens ? Bien évidement ! On va donc définir une mesure de la variabilité de notre échantillon qui soit robuste, à savoir l'**écart absolu à la médiane** (**MAD** pour Median Absolut Deviation). Il s'agit de la **distance moyenne entre les données et la médiane**. Ainsi, on va pouvoir calculer l'écart individuel à la médiane en unité d'écart absolu médian à la médiane... complexe dit comme ca, voyons la formule.
+Vous me voyez venir ? Le **score Z robuste** est simplement une alternative qui prend en compte la médiane plutôt que la moyenne. Mais, me direz-vous : si on prend en compte la médiane, mesurer l'écart à celle-ci qui plus est en unité d'écart type n'a pas de sens ? Bien évidement ! On va donc définir une mesure de la variabilité de notre échantillon qui soit robuste, à savoir l'**écart absolu à la médiane** (**MAD** pour Median Absolut Deviation). Il s'agit de la **distance médiane entre les données et la médiane**. Ainsi, on va pouvoir calculer l'écart individuel à la médiane en unité d'écart absolu médian à la médiane... complexe dit comme ca, voyons la formule.
 
 Pour trouver l'**écart absolu à la médiane**, voici les étapes à suivre :
 
@@ -198,7 +198,7 @@ Pour trouver l'**écart absolu à la médiane**, voici les étapes à suivre :
 
 4. Calculez la médiane de cette différences absolue.
 
-> La MAD est donc définie comme la médiane des écarts absolus par rapport à la médiane des données.
+<blblockquote> La MAD est donc définie comme la médiane des écarts absolus par rapport à la médiane des données.</blockquote>
 
 Formellement,
 
@@ -208,9 +208,9 @@ avec $x_{i}$ la valeur d'un individu statistique pour la variable $X$. Nous avon
 
 Voici la formule du score Z modifié :
 
-$$ Z = 0.6745 \frac{(x_{i} - med(X))}{MAD}.$$
+$$Z = 0.6745 \frac{(x_{i} - med(X))}{MAD}.$$
 
-Vous observez le coefficient $0.6745$ qui permet d'**approximer un équivalent médiane de l'écart-type**. Je m'explique : en multipliant l'écart à la médiane en unité de MAD par le coefficient $\frac{1}{O.67449} \approx 1.4826$ on s'assure que la MAD sera approximativement équivalente (au moins asymptotiquement) à l'estimateur standard de l'écart-type pour une distribution normale. Ce processus va nous permettre de **fixer un seuil** en nous appuyant sur les **quantiles de la distribution normale centrée-réduite** et d'interpréter le score Z modifié comme le score Z. Par exemple, si un individu pour une variable donnée obtient un score de 2, plus de 95% des individus seront inférieur à lui en valeur absolue.
+<p> Vous observez le coefficient $0.6745$ qui permet d'**approximer un équivalent médiane de l'écart-type**. Je m'explique : en multipliant l'écart à la médiane en unité de MAD par le coefficient $\frac{1}{O.67449} \approx 1.4826$ on s'assure que la MAD sera approximativement équivalente (au moins asymptotiquement) à l'estimateur standard de l'écart-type pour une distribution normale. Ce processus va nous permettre de **fixer un seuil** en nous appuyant sur les **quantiles de la distribution normale centrée-réduite** et d'interpréter le score Z modifié comme le score Z. Par exemple, si un individu pour une variable donnée obtient un score de 2, plus de 95% des individus seront inférieur à lui en valeur absolue.</p>
 
 Avantages du score Z modifié/robuste :
 1. Les données peuvent ne pas être normalement distribuées ;
