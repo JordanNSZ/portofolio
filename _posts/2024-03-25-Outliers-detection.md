@@ -514,7 +514,8 @@ On observe une distribution relativement identique à celle de l'échantillon co
 
 ![Histogramme]({{ site.baseurl }}/assets/img/outliers_detection/histogram_subsample.png)
 
-Afin d'illustrer mon propos je vous propose d'observer l'évolution de la distribution à mesure que le nombre d'outliers croît et que ces derniers sont imputer par la moyenne de la série initiale, soit 4.7075. Nous allons considérer que successivement 10, 30, 50 et 100 outliers se trouvent dans les queues de notre distribution. Sur chaque graphique, la médiane initiale sera représentée en bleue, la moyenne initiale en rouge et la moyenne après imputation en vert. Voici les graphiques représentant les distributions après imputation des outliers par la moyenne : 
+Afin d'illustrer mon propos je vous propose d'observer l'évolution de la distribution à mesure que le nombre d'outliers croît et que ces derniers sont imputer par la moyenne de la série initiale, soit 4.7075. Nous allons considérer que successivement 10, 30, 50 et 100 outliers se trouvent dans les queues de notre distribution. Sur chaque graphique, la médiane initiale sera représentée en bleue, la moyenne initiale en rouge et la moyenne après imputation en vert. Voici les graphiques représentant les distributions après imputation des outliers par la moyenne :
+
 ![Histogramme après imputation de 10 outliers par la moyenne.](/assets/img/outliers_detection/histogram_10outliers.png)
 ![Histogramme]({{ site.baseurl }}/assets/img/outliers_detection/histogram_10outliers.png)
 
@@ -529,6 +530,7 @@ Afin d'illustrer mon propos je vous propose d'observer l'évolution de la distri
 
 ![Résultat de l'imputation des outliers par la moyenne \(sous-échantillon, n=500\).](/assets/img/outliers_detection/histogram_imputation_moyenne.png)
 ![Histogramme]({{ site.baseurl }}/assets/img/outliers_detection/histogram_imputation_moyenne.png)
+
 Principales conclusions de cette démonstration.
 
 À mesure que le **nombre d'outliers croît**, l'impact de l'imputation par la moyenne se fait plus grand :
