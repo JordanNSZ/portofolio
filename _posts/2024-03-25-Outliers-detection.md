@@ -513,23 +513,26 @@ On observe une distribution relativement identique à celle de l'échantillon co
 ![Histogramme]({{ site.baseurl }}/assets/img/outliers_detection/histogram_subsample.png)
 
 Afin d'illustrer mon propos je vous propose d'observer l'évolution de la distribution à mesure que le nombre d'outliers croît et que ces derniers sont imputer par la moyenne de la série initiale, soit 4.7075. Nous allons considérer que successivement 10, 30, 50 et 100 outliers se trouvent dans les queues de notre distribution. Sur chaque graphique, la médiane initiale sera représentée en bleue, la moyenne initiale en rouge et la moyenne après imputation en vert. Voici les graphiques représentant les distributions après imputation des outliers par la moyenne : 
-![Histogramme du logarithme des prix des logements Airbnb \(sous-échantillon, n=500\), Auteur.](/assets/img/outliers_detection/histogram_10outliers.png)
+![Histogramme du logarithme des prix des logements Airbnb \(sous-échantillon, n=500\).](/assets/img/outliers_detection/histogram_10outliers.png)
 ![Histogramme]({{ site.baseurl }}/assets/img/outliers_detection/histogram_10outliers.png)
 
-![Histogramme du logarithme des prix des logements Airbnb \(sous-échantillon, n=500\), Auteur.](/assets/img/outliers_detection/histogram_30outliers.png)
+![Histogramme du logarithme des prix des logements Airbnb \(sous-échantillon, n=500\).](/assets/img/outliers_detection/histogram_30outliers.png)
 ![Histogramme]({{ site.baseurl }}/assets/img/outliers_detection/histogram_30outliers.png)
 
-![Histogramme du logarithme des prix des logements Airbnb \(sous-échantillon, n=500\), Auteur.](/assets/img/outliers_detection/histogram_50outliers.png)
+![Histogramme du logarithme des prix des logements Airbnb \(sous-échantillon, n=500\).](/assets/img/outliers_detection/histogram_50outliers.png)
 ![Histogramme]({{ site.baseurl }}/assets/img/outliers_detection/histogram_50outliers.png)
 
-![Histogramme du logarithme des prix des logements Airbnb \(sous-échantillon, n=500\), Auteur.](/assets/img/outliers_detection/histogram_100outliers.png)
+![Histogramme du logarithme des prix des logements Airbnb \(sous-échantillon, n=500\).](/assets/img/outliers_detection/histogram_100outliers.png)
 ![Histogramme]({{ site.baseurl }}/assets/img/outliers_detection/histogram_100outliers.png)
+
+![Résultat de l'imputation des outliers par la moyenne \(sous-échantillon, n=500\).](/assets/img/outliers_detection/histogram_imputation_moyenne.png)
 
 Principales conclusions de cette démonstration.
 
-1. À mesure que le **nombre d'outliers croît**, l'impact de l'imputation par la moyenne se fait plus grand :
+À mesure que le **nombre d'outliers croît**, l'impact de l'imputation par la moyenne se fait plus grand :
 - la moyenne passe de 4.7075 à 4.6315 ;
 - la médiane passe de 4.6052 à 4.7075.
+
 Ce dernier point est intéressant puisque la médiane s'est déplacée vers la moyenne d'origine. Pour cause, le nombre d'individus prenant cette valeur augmente considérablement, entraînant une **modification importante de la distribution du phénomène mesuré**. 
 
 La modification significative de la moyenne de l'échantillon, et, par voie de conséquence, de notre distribution, nous permettent d'affirmer que cette dernière **n'est plus représentative des mesures récoltées**. Aussi, employer ce type d'imputation à mesure que l'échantillon croît peut conduire à de **fausses conclusions** : nos analyses seront biaisées. 
