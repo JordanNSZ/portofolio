@@ -490,7 +490,13 @@ Dans le cas où les valeurs aberrantes seraient nombreuses, une méthode d'imput
 
 #### Imputation des outliers.
 ##### Imputation par un paramètre de tendance centrale. 
-Il est courant d'observer des travaux (même scientifiques) dans lesquels les valeurs manquantes et/ou les valeurs aberrantes sont remplacé par des paramètres de position. C'est une grave erreur et, je dois le dire, cette erreur à motiver ce travail. Encore une fois, gardez à l'esprit que la détection et le traitement des valeurs lointaines est nécessaire pour ne pas biaiser nos analyses : les outliers tirent la moyenne et l'écart-type, deux paramètres largement utilisés lors d'analyses inférentielles. Autrement dit, si vous chercher à diminuer l'impact de vos outliers sur votre distribution statistique, quelle idée d'aller à nouveau impacter celle-ci en imputant vos outliers avec la moyenne ou la médiane ? Il est donc clair qu'une imputation de valeurs aberrantes par la moyenne ou la médiane demande de vérifier l'impact qu'elle aura sur votre distribution. Combien même je ne recommande pas cette méthode, elle peut être intéressante à mettre en place afin d'arbitrer l'ampleur de l'impact d'une autre méthode d'imputation -e.g. les k plus proches voisins. (Bien sûr, cela vaut pour l'imputation des données manquantes.) Pour illustrer ce point, je vais extraire un sous-échantillon de 500 individus de notre distribution d'origine. 
+Il est courant d'observer des travaux (même scientifiques) dans lesquels les valeurs manquantes et/ou les valeurs aberrantes sont remplacé par des paramètres de position tel que la moyenne ou la médiane (variable quantitative) et le mode (variable catégorielle). Cette méthode est souvant critiquée. En effet, imputer une données par la moyenne ou la médiane de la série n'est pas une bonne pratique dans le cas d'un point aberrant. Tout d'abord parce que la moyenne est impactée par les valeurs extrêmes donc si la valeur aberrante est très élevée - e.g. 1428 minutes - la moyenne de la série ne reflète pas celle du phénomène étudié. Il peut être plus prudent de retirer cette valeur aberrante avant de calculer la moyenne (médiane) de la série pour l'imputer à votre observation. Ceci étant, l'imputation par la moyenne a tendance à **gonfler** la médiane et l'**écart-type**. Il en va de même pour l'imputation par la médiane. Pour l'exprimer différemment, vous risquez, avec un trop grand nombre de valeurs aberrantes, d'introduire un nouveau biais dans vos analyses et donc d'apporter des conclusions erronées. 
+
+Pour cette raison, je conseille d'évaluer la qualité de votre méthode d'imputation une fois réalisée. Pour cela on peut comparer les paramètres tels que la moyenne, la médiane et l'écart-type avant et après l'imputation. En ègle générale, je choisis l'imputation qui est la plus protectrice à l'égard de la distribution et particulièrement de l'écart-type. Notamment, je compare toujours plusieurs méthodes d'imputation : médiane, moyenne, k plus proches voisins, entre autres. 
+
+(Cela vaut aussi pour l'imputation de données manquantes.)
+
+Pour illustrer ce point, je vais extraire un sous-échantillon de 500 individus de notre distribution d'origine. Nous allons comparer, pour chaque méthode d'imputation, la médiane, la moyenne et l'écart-type, avant et après imputation. On considèrera successivement, 10 ,50 et 100 valeurs aberrantes et trois méthodes d'imputation des données : médiane, moyenne et k plus proches voisins.
 
 ```python
 data = df.sample(500, ignore_index=True)
@@ -512,26 +518,14 @@ On observe une distribution relativement identique à celle de l'échantillon co
 
 ![Histogramme du logarithme des prix des logements Airbnb \(sous-échantillon, n=500\), Auteur.](/assets/img/outliers_detection/histogram_subsample.png)
 
-![Histogramme]({{ site.baseurl }}/assets/img/outliers_detection/histogram_subsample.png)
+![](/assets/img/outliers_detection/histogram_subsample.png)    
+*Histogramme du prix des logements Airbnb (en logarithme, sous-échantillon de 500 individus).* 
 
 Afin d'illustrer mon propos je vous propose d'observer l'évolution de la distribution à mesure que le nombre d'outliers croît et que ces derniers sont imputer par la moyenne de la série initiale, soit 4.7075. Nous allons considérer que successivement 10, 30, 50 et 100 outliers se trouvent dans les queues de notre distribution. Sur chaque graphique, la médiane initiale sera représentée en bleue, la moyenne initiale en rouge et la moyenne après imputation en vert. Voici les graphiques représentant les distributions après imputation des outliers par la moyenne :
 
-![Histogramme après imputation de 10 outliers par la moyenne.](/assets/img/outliers_detection/histogram_10outliers.png)
-![Histogramme]({{ site.baseurl }}/assets/img/outliers_detection/histogram_10outliers.png)
-
-![Histogramme après imputation de 30 outliers par la moyenne.](/assets/img/outliers_detection/histogram_30outliers.png)
-![Histogramme]({{ site.baseurl }}/assets/img/outliers_detection/histogram_30outliers.png)
-
-![Histogramme après imputation de 50 outliers par la moyenne.](/assets/img/outliers_detection/histogram_50outliers.png)
-![Histogramme]({{ site.baseurl }}/assets/img/outliers_detection/histogram_50outliers.png)
-
-![Histogramme après imputation de 100 outliers par la moyenne.](/assets/img/outliers_detection/histogram_100outliers.png)
-![Histogramme]({{ site.baseurl }}/assets/img/outliers_detection/histogram_100outliers.png)
-
 ![Résultat de l'imputation des outliers par la moyenne \(sous-échantillon, n=500\).](/assets/img/outliers_detection/histogram_imputation_moyenne.png)
-![Histogramme]({{ site.baseurl }}/assets/img/outliers_detection/histogram_imputation_moyenne.png)
 
-Principales conclusions de cette démonstration.
+Conclusions :
 
 À mesure que le **nombre d'outliers croît**, l'impact de l'imputation par la moyenne se fait plus grand :
 - la moyenne passe de 4.7075 à 4.6315 ;
@@ -541,16 +535,32 @@ Ce dernier point est intéressant puisque la médiane s'est déplacée vers la m
 
 La modification significative de la moyenne de l'échantillon, et, par voie de conséquence, de notre distribution, nous permettent d'affirmer que cette dernière **n'est plus représentative des mesures récoltées**. Aussi, employer ce type d'imputation à mesure que l'échantillon croît peut conduire à de **fausses conclusions** : nos analyses seront biaisées. 
 
-Voyons l'impact d'une imputation par la médiane.
-##### Imputation par KNN.
-Une méthode d'imputation des données relativement protectrice à l'égard de la distribution est celle des K-Nearest Neighboors (KNN). Cette méthode remplace la valeur aberrante par la moyenne de ces k plus proches voisins. Ces k plus proches voisins sont ceux pour lesquelles ont observe des valeurs semblables hors valeurs manquantes.
+Voyons l'impact d'une imputation par la médiane. Nous utilisons le même échantillon de 500 individus. Puis nous remplaçons successivement 10, 30, 50 et 100 points extrêmes par la médiane de la distribution d'origine. La figure suivante reprend l'évolution de la distribution à mesure que le nombre de points extrêmes imputés augmente (la médiane après imputation est représentée en vert).  
+
+![Résultat de l'imputation des outliers par la moyenne \(sous-échantillon, n=500\).](/assets/img/outliers_detection/histogram_imputation_mediane.png)
+
+Conclusions : 
+1. Pas d'impact sur la médiane ; ce qui est intuitif et évident compte tenu de la construction de la médiane. 
+2. La moyenne est tout autant impacté que lors de l'imputation par la moyenne. 
+3. L'écart-type de la distribution connait une variation importante. 
+Autrement dit, l'imputation par la médiane n'est pas plus conservatrice à l'égard de la distribution que l'imputation par la moyenne. On observe une déformation importante de notre distribution (moyenne et écart-type) qui ne reflète plus le phénomène étudié. 
+
+Ainsi, avant d'imputer vos données avec la moyenne ou la médiane, vérifier l'impact que celle-ci aura sur votre distribution, sinon vous risquez de fausser les conclusions de vos analyses. Personnellement, j'évite d'utiliser ces paramètres de tendances centrales pour remplacer les valeurs aberrantes. Plutôt, j'utilise ces méthodes comme une référence pour évaluer la qualité d'une imputation par les *k plus proches voisins*, par exemple. 
+
+##### Imputation par les k plus proches voisins.
+Une méthode d'imputation des données relativement protectrice à l'égard de la distribution est celle des K-Nearest Neighboors (KNN). Cette méthode remplace la valeur aberrante par la moyenne de ces k plus proches voisins - ou la classe majoritaire si il s'agit d'une variable catégorielle. Ces k plus proches voisins sont ceux pour lesquelles ont observe des valeurs semblables hors valeurs manquantes. Notez que cette algorithme utilise la distance (euclidienne, par exemple) pour comparer les points entre eux. L'échelle de mesure des variables peut donc affecter les performances de l'algorithme ainsi que les prédictions. Il faut donc normaliser l'ensemble des varaibles quantitatives.
 
 > **Pour résumer, trois méthodes sont à votre disposition pour traiter un point aberrant : trouver/comprendre la source de l'erreur, supprimer les points en question, changer leur valeur via une méthode d'imputation statistique.**
 
 ### Traitement des points extrêmes.
-En ce qui concerne le traitement des points extrêmes, la méthode d'imputaiton est à proscrire. De plus, puisque vous avez qualifié ces points d'extrêmes, vous en connaissez la raison -la source de cette extremité n'est plus à chercher. Aussi, compte tenu de votre connaissance métier, il vous faudra choisir entre retirer ces points de votre analyse ou les intégrer. En effet, leur intérêt pour l'analyse pêut être primordiale ou inexistant. Si vous réaliser une régression pour comprendre l'impcat du sport sur le poids chez les étudiants, il se peut que vous observiez des sportifs professionnels dont le temps consacré par semaine à la pratique est très élevé. Ces individus peuvent certes être jugés comme des points extrêmes mais ne doivent pas être remplacés , ni supprimés de votre base de données. Puisque l'objet de votre analyse inférentielle n'est pas de comprendre l'impact du sport chez les sportif de haut niveau mais plutôt chez les étudiants en générale, il faudra considérer de mener l'analyse sans et avec ces individus (ou une analyse séparé pour chacun des deux groupes). Cela vous permettra d'appréhender l'impact de ces points extrêmes sur votre régression. Particulièrement, si vous intégrez ces points, vous devez vous assurer qu'ils ne sont pas des points leviers, dans quel cas, ils entrainent un sur-ajustement du modèle et donc une estimation de l'impact du sport sur le poids qui serait trompeuse.
+En ce qui concerne le traitement des points extrêmes, vous ne devez pas les imputer par une autre valeur puisque celle observer, combien même atypique, est une mesure réelle et exacte du phénomène étudié/mesuré. De plus, puisque vous avez qualifié ces points d'extrêmes, vous en connaissez la raison - la source de cette extremité n'est plus à chercher. Aussi, compte tenu de votre connaissance métier, il vous faudra choisir entre retirer ces points de votre analyse ou les intégrer. Demandez-vous si ce point fait partie de la **population ciblée par votre question de recherche**. Par exemple, si vous réaliser une régression pour comprendre l'**impcat du sport sur le poids des étudiants**, il se peut que vous observiez des **sportifs professionnels** dont le temps consacré par semaine à la pratique est très élevé. Ces individus seront certainement jugés comme des points extrêmes mais ne doivent pas être remplacés. Supposons, qu'un des étudiants soit un sportif de haut niveau. 
 
-#### Arbre de décision pour le traitement des valeurs aberrantes. 
+- Si il ne fait pas partie de votre population cible - e.g. les étudiants lambda - il peut être supprimé ; il n'a pas d'intérêt pour répondre à la question de recherche spécifiée, il pourrait fausser vos conclusions sur la population cible. Pensez tout de même à le notifier dans votre rapport d'analyse. 
+
+- Si il fait partie de votre population cible, vous allez le conserver dans votre analyse, mais avec quelques points de prudence à adopter. Je conseille de **mener une analyse avec et sans l'outlier** pour m'assurer qu'il **n'affecte pas les hypothèses** et/ou **le résultat** du modèle. Il se peut que sa présence entrave les résultats - e.g. ce point crée une association inexistante entre X et Y : le coefficient de régression ne reflète pas vraiment l'effet de X sur Y ; i.e. ce point agit comme un levier sur votre modèle, il crée un phénomène de sur-ajustement. Enfin, si les hypothèses de votre modèle ne sont pas respectées, essayez une transformation log ou racine carrée pour diminuer l'impact de cette valeur extrême. Quoi qu'il en soit, si vous en arrivez à extraire ce point de votre étude, il faudra le notifier en expliquant pourquoi ce point à été exclu de l'analyse. 
+
+#### Arbre de décision pour le traitement des valeurs aberrantes.
+
 ![arbre de décison](/assets/img/decision_tree.png)
 
 Merci d'avoir lu cette note ! J'espère qu'elle vous a plu. À bientot !
