@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Anova à 1 facteur - théorie et étude de cas."
-date: 2024-09-07
-description: Dans cette note je reprends les fondements théoriques de l'analyse de la variance à un facteur. Une étude de cas est proposée : comparaison des temps moyens de production de trois chaînes de production. 
+date: 2024-09-24
+description: "Dans cette note je reprends les fondements théoriques de l'analyse de la variance à un facteur. Une étude de cas est proposée : comparaison des temps moyens de production de trois chaînes de production." 
 ---
 
 ## L'analyse de la variance.
