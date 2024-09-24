@@ -2,7 +2,9 @@
 layout: post
 title: "Uninstall the snap firefox and let geckodriver find your profile."
 date: 2024-09-07
-description: Cet article reprend pas-à-pas les étapes de la suppression du snap firefox et de l'installation d'une version deb de firefox. Notamment cela permet à Geckodriver d'accéder au profil firefox lors de l'utilisation du module Selenium de python. 
+categories: ["Linux", "Python"]
+tags: ["Selenium", "Snap firefox", "geckodriver", "webscraping"]
+description: "Cet article reprend pas-à-pas les étapes de la suppression du snap firefox et de l'installation d'une version deb de firefox. Notamment cela permet à Geckodriver d'accéder au profil firefox lors de l'utilisation du module Selenium de python."
 ---
 
 

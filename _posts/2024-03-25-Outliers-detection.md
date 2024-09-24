@@ -2,7 +2,9 @@
 layout: post
 title: "Détection des points extrêmes : comment les reprérer, les qualifier et les traiter ?"
 date: 2024-03-25
-description: La détection des so-called "outliers" est primordiale pour mener des analyses inférentielles non-biaisées. Cet article explore les méthodes de détection, de qualification et de traitement des points lointains. Une étude de cas est proposée avec l'ensemble de données Kaggle 'Airbnb'. 
+categories: ["R", "Python", "Data Science"]
+tags: ["R", "Python", "Outliers"]
+description: "La détection des so-called 'outliers' est primordiale pour mener des analyses inférentielles non-biaisées. Cet article explore les méthodes de détection, de qualification et de traitement des points lointains. Une étude de cas est proposée avec l'ensemble de données Kaggle 'Airbnb'." 
 ---
 
 Un **point extrême**, plus connu sous le nom d'**outlier** ou d'**anomalie**, est une observation distante des autres observations de la distribution. Ces points peuvent être de deux natures, soit ils sont le résultat de la variabilité propre au phénomène étudier, soit ils sont dus à une erreur de saisie. Dans le premier cas je parles de **points atypiques** puisqu'ils ont du sens pour le phénomène observé. Dans le second cas, je parlerais de **points aberrants** en cela qu'ils n'ont pas de sens vis-à-vis du phénomène observé.  
