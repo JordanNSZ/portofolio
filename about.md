@@ -11,7 +11,7 @@ title: About Me
 	<br> 
 	
 	<h1 class="pageTitle">Mon CV</h1>
-	<p> Si vous souhaitez accéder à une version détaillée de mon cv, consulter ce <a href="{{ site.baseurl }}/assets/pdf/linkedin.pdf"> pdf </a> ou rendez-vous sur <a href="https://www.linkedin.com/in/jordannagadzina-sanchez"> <b>linkedin</b> </a>. </p> Sinon, essayez ce pdf [pdf]({{ site.baseurl }}{% link /assets/pdf/linkedin.pdf %}).
+	<p> Si vous souhaitez accéder à une version détaillée de mon cv, consulter ce <a href="{{ site.baseurl }}/assets/pdf/linkedin.pdf"> pdf </a> ou rendez-vous sur <a href="https://www.linkedin.com/in/jordannagadzina-sanchez"> <b>linkedin</b> </a>. </p> Sinon, essayez ce pdf ({{ site.baseurl }}{% link /assets/pdf/linkedin.pdf %}).
     <h3>Expériences professionnelles</h3>
     <ul>
         <h4>Emplois</h4>
