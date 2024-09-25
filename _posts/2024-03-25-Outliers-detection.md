@@ -43,8 +43,6 @@ fig.update_traces(texttemplate='%{y}', textposition='auto')
 fig.show()
 ``` 
 
-![Histogramme du logarithme des prix des logements Airbnb, Auteur.](/assets/img/outliers_detection/histogram_logprice.png)
-
 ![Histogramme]({{ site.baseurl }}/assets/img/outliers_detection/histogram_logprice.png)
 
 On remarque nettement la présence d'outliers dans la queue inférieure de la distribution. Il existe deux points qui se distingue particulièrement des autres. Qui plus est, les queues de la distribution semblent étirées par quelques observations. Nous allons pouvoir vérifier ce point grâce à un diagramme en boîte.
@@ -58,8 +56,6 @@ fig = px.box(df, x='log_price', title='Boxplot of Log(Price)')
 fig.update_layout(xaxis_title='Log Price',)
 fig.show()
 ``` 
-
-![Diagramme en boîte du logarithme des prix des logements Airbnb, Auteur.](/assets/img/outliers_detection/boxplot_logprice.png)
 
 ![Diagramme]({{ site.baseurl }}/assets/img/outliers_detection/boxplot_logprice.png)
 
@@ -143,8 +139,11 @@ où, $\bar{x}$ et $\sigma$ sont, respectivement, la moyenne et l'écart-type de 
 Nous avons utiliser le score Z pour détecter d'éventuelles anomalies dans notre distribution. Il en ressort qu'un certain nombre d'observations ont un score supérieur à 2. Notamment, les deux observations situées dans la queue inférieure gauche de la distribution. Lorsque le seuil est fixé à 3, seules ces deux observations sont suspectées d'anomalie.
 
 Quelques prudences à adopter lors du calcul du score Z :
+
 1. Vérifier la normalité de la distribution ;
+
 2. Le choix du seuil est décisif et impactera forcément le résultat. Il dépend du niveau de sensibilité souhaité ;
+
 3. Le score suppose un "lointain" par rapport à la moyenne. Cela peut être problématique puisque la moyenne est sensible aux outliers : c'est un peu le serpent qui se mord la queue cette histoire.
 
 Vérifions la normalité de la distribution à un risque $\alpha$ de 5%. J'utilise le test de Kolmogorov-Smirnov pour deux raisons : la présence de nombreux outliers, et la taille de l'échantillon. En effet, l'utilisation du test de Shapiro-Wilk n'est pas recommandé pour les échantillons de plus de 5'000 individus. Concernant le premier point, le test de Shapiro-Wilk est très sensible aux outliers. Aussi, combien même la taille de l'échantillon eu été raisonnable, il est préférable d'utiliser un test d'adéquation non-paramétrique tel que celui de Kolmogorov-Smirnov. 
@@ -162,7 +161,6 @@ import statsmodels.api as sm
 qqplot = sm.qqplot(df["log_price"], fit=True, line="45")
 qqplot.show()
 ```
-![QQplot du logarithme des prix des logements Airbnb, auteur.](/assets/img/outliers_detection/qqplot_logprice.png)
 
 ![QQplot]({{ site.baseurl }}/assets/img/outliers_detection/qqplot_logprice.png)
 
@@ -215,10 +213,14 @@ $$Z = 0.6745 \frac{(x_{i} - med(X))}{MAD}.$$
 Vous observez le coefficient $0.6745$ qui permet d'**approximer un équivalent médiane de l'écart-type**. Je m'explique : en multipliant l'écart à la médiane en unité de MAD par le coefficient $\frac{1}{O.67449} \approx 1.4826$ on s'assure que la MAD sera approximativement équivalente (au moins asymptotiquement) à l'estimateur standard de l'écart-type pour une distribution normale. Ce processus va nous permettre de **fixer un seuil** en nous appuyant sur les **quantiles de la distribution normale centrée-réduite** et d'interpréter le score Z modifié comme le score Z. Par exemple, si un individu pour une variable donnée obtient un score de 2, plus de 95% des individus seront inférieur à lui en valeur absolue.
 
 Avantages du score Z modifié/robuste :
+
 1. Les données peuvent ne pas être normalement distribuées ;
-2. Les quantiles de la loi Normale centrée-réduite peuvent être utilisée pour fixer une valeur seuil ;
-3. Le score Z robuste et le score Z sont comparables puisque définis sur la même échelle ;
-4. Toutefois, les deux scores peuvent établir différent outliers. Cela est du au fait que la médiane est moins sensible aux valeurs extrêmes, donc il se peut que davantage de points se révèlent être des outliers avec le score Z modifié. 
+2. 
+3. Les quantiles de la loi Normale centrée-réduite peuvent être utilisée pour fixer une valeur seuil ;
+4. 
+5. Le score Z robuste et le score Z sont comparables puisque définis sur la même échelle ;
+6. 
+7. Toutefois, les deux scores peuvent établir différent outliers. Cela est du au fait que la médiane est moins sensible aux valeurs extrêmes, donc il se peut que davantage de points se révèlent être des outliers avec le score Z modifié.
 
 Dans l'exemple qui suit nous avons calculé le score Z modifié.
 
@@ -257,8 +259,6 @@ Juste pour le plaisir, observons la distribution des scores Z modifiés.
 _ = px.histogram(df, x="robust_z_score", nbins=45, title="Histogram of modified z score")
 _.show()
 ```
-
-![Histogamme des scores Z robustes, auteur.](/assets/img/outliers_detection/histogram_robustZ.png)
 
 ![Histogramme]({{ site.baseurl }}/assets/img/outliers_detection/histogram_robustZ.png)
 
@@ -491,7 +491,8 @@ Dans le cas où les valeurs aberrantes ne seraient pas torp nombreuses et que le
 Dans le cas où les valeurs aberrantes seraient nombreuses, une méthode d'imputation peut être idéale afin de remplacer ces valeurs.
 
 #### Imputation des outliers.
-##### Imputation par un paramètre de tendance centrale. 
+##### Imputation par un paramètre de tendance centrale.
+
 Il est courant d'observer des travaux (même scientifiques) dans lesquels les valeurs manquantes et/ou les valeurs aberrantes sont remplacé par des paramètres de position tel que la moyenne ou la médiane (variable quantitative) et le mode (variable catégorielle). Cette méthode est souvant critiquée. En effet, imputer une données par la moyenne ou la médiane de la série n'est pas une bonne pratique dans le cas d'un point aberrant. Tout d'abord parce que la moyenne est impactée par les valeurs extrêmes donc si la valeur aberrante est très élevée - e.g. 1428 minutes - la moyenne de la série ne reflète pas celle du phénomène étudié. Il peut être plus prudent de retirer cette valeur aberrante avant de calculer la moyenne (médiane) de la série pour l'imputer à votre observation. Ceci étant, l'imputation par la moyenne a tendance à **gonfler** la médiane et l'**écart-type**. Il en va de même pour l'imputation par la médiane. Pour l'exprimer différemment, vous risquez, avec un trop grand nombre de valeurs aberrantes, d'introduire un nouveau biais dans vos analyses et donc d'apporter des conclusions erronées. 
 
 Pour cette raison, je conseille d'évaluer la qualité de votre méthode d'imputation une fois réalisée. Pour cela on peut comparer les paramètres tels que la moyenne, la médiane et l'écart-type avant et après l'imputation. En ègle générale, je choisis l'imputation qui est la plus protectrice à l'égard de la distribution et particulièrement de l'écart-type. Notamment, je compare toujours plusieurs méthodes d'imputation : médiane, moyenne, k plus proches voisins, entre autres. 
@@ -518,14 +519,14 @@ fig.show()
 
 On observe une distribution relativement identique à celle de l'échantillon complet.
 
-![Histogramme du logarithme des prix des logements Airbnb \(sous-échantillon, n=500\), Auteur.](/assets/img/outliers_detection/histogram_subsample.png)
+![Histogramme du logarithme des prix des logements Airbnb \(sous-échantillon, n=500\), Auteur.]({{ site.baseurl }}/assets/img/outliers_detection/histogram_subsample.png)
 
 ![](/assets/img/outliers_detection/histogram_subsample.png)    
 *Histogramme du prix des logements Airbnb (en logarithme, sous-échantillon de 500 individus).* 
 
 Afin d'illustrer mon propos je vous propose d'observer l'évolution de la distribution à mesure que le nombre d'outliers croît et que ces derniers sont imputer par la moyenne de la série initiale, soit 4.7075. Nous allons considérer que successivement 10, 30, 50 et 100 outliers se trouvent dans les queues de notre distribution. Sur chaque graphique, la médiane initiale sera représentée en bleue, la moyenne initiale en rouge et la moyenne après imputation en vert. Voici les graphiques représentant les distributions après imputation des outliers par la moyenne :
 
-![Résultat de l'imputation des outliers par la moyenne \(sous-échantillon, n=500\).](/assets/img/outliers_detection/histogram_imputation_moyenne.png)
+![Résultat de l'imputation des outliers par la moyenne \(sous-échantillon, n=500\).]({{ site.baseurl }}/assets/img/outliers_detection/histogram_imputation_moyenne.png)
 
 Conclusions :
 
@@ -539,7 +540,7 @@ La modification significative de la moyenne de l'échantillon, et, par voie de c
 
 Voyons l'impact d'une imputation par la médiane. Nous utilisons le même échantillon de 500 individus. Puis nous remplaçons successivement 10, 30, 50 et 100 points extrêmes par la médiane de la distribution d'origine. La figure suivante reprend l'évolution de la distribution à mesure que le nombre de points extrêmes imputés augmente (la médiane après imputation est représentée en vert).  
 
-![Résultat de l'imputation des outliers par la moyenne \(sous-échantillon, n=500\).](/assets/img/outliers_detection/histogram_imputation_mediane.png)
+![Résultat de l'imputation des outliers par la moyenne \(sous-échantillon, n=500\).]({{ site.baseurl }}/assets/img/outliers_detection/histogram_imputation_mediane.png)
 
 Conclusions : 
 1. Pas d'impact sur la médiane ; ce qui est intuitif et évident compte tenu de la construction de la médiane. 
@@ -565,6 +566,6 @@ En ce qui concerne le traitement des points extrêmes, vous ne devez pas les imp
 
 ![arbre de décison]({{ site.baseurl }}/assets/img/decision_tree.png "Arbre de décision pour le traitement des outliers.")
 
-Merci d'avoir lu cette note ! J'espère qu'elle vous a plu. À bientot !
+Merci d'avoir lu cette note ! J'espère qu'elle vous a plu. À bientot ! 
 
 [^1]:Pour rappel, si le coefficient est inférieur à $0$, asymétrie à gauche ; si le coefficient est supérieur à $0$, asymétrie à droite.
