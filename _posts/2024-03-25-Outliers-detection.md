@@ -563,7 +563,7 @@ En ce qui concerne le traitement des points extrêmes, vous ne devez pas les imp
 
 #### Arbre de décision pour le traitement des valeurs aberrantes.
 
-![arbre de décison](/assets/img/decision_tree.png)
+![arbre de décison]({{ site.baseurl }}/assets/img/decision_tree.png "Arbre de décision pour le traitement des outliers.")
 
 Merci d'avoir lu cette note ! J'espère qu'elle vous a plu. À bientot !
 
