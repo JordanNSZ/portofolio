@@ -14,9 +14,7 @@ sass:
 
 markdown: kramdown
 highlighter: rouge
-plugins: 
-    - jekyll-paginate
-    - jekyll-tabs
+plugins: [jekyll-paginate, jekyll-tabs]
 paginate: 3 #3 articles affichés par page.
 
 navigation:
