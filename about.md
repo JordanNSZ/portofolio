@@ -10,7 +10,7 @@ title: About Me
 	<p> À la recherche d'une <b>expertise analytique</b> ou simplement l'envie d'explorer mes publications ? N'hésitez pas à me  <a href="mailto:jordan.nagadzina.sanchez@gmail.com">contacter</a> pour discuter de vos projets et de vos besoins en analyse de données !</p>
 	<br> 
 	
-	<h1 class="pageTitle" style="font-size: 24px;">Mon CV</h1>
+	<h1 class="pageTitle" style="font-size: 35px;">Mon CV</h1>
 
 	<p> Si vous souhaitez accéder à une version détaillée de mon cv, consulter ce <a href="{{ site.baseurl }}/assets/pdf/linkedin.pdf"> pdf </a> ou rendez-vous sur <a href="https://www.linkedin.com/in/jordannagadzina-sanchez"> <b>linkedin</b> </a>. </p>
 
