@@ -21,12 +21,14 @@ image: ""
   	<h3>Posts récents</h3>
   	</ul>
   	
-  	<li> Étude de Cas : le prix moyen au mètre carré par arrondissement. </li>
+  	<li> <a href="{{ site.baseurl }}/assets/pdf/KruskalWallis_LoyerLyon.pdf"> Étude de Cas </a> : le prix moyen au mètre carré par arrondissement. </li>
     <ul> <p style="font-size: 10px;"> En utilisant des données réelles d'annonces immobilières, on cherche à savoir si les prix au mètre carré par arrondissement (9) sont significativiement différents. Pour répondre à cette interrogation, il est courant d'utiliser l'Anova. Après avoir nettoyé les données, on s'intéresse à vérifier les conditions d'application d'une analyse de la variance (anova). Les résidus du modèle n'étant pas normalement distribués on utilise un test de Kruskal-Wallis ; on conclut à l'existence d'une différence significative entre au moins 2 arrondissements. Finalement, les tests post-hoc mettent en évidence qu'il existe bien une différence statistiquement significative entre le prix moyen au mètre carré du 8ème et le 6ème et le 9ème arrondissement. </p> </ul>
 	
 	<li> <a href="{{ site.baseurl }}/assets/pdf/git.pdf"> How to GIT ? Le versioning c'est la vie. </a> </li>
 	
 	<li>Le test de Kruskal-Wallis : une alternative non-paramétrique à l'Anova.</li>
+	
+	<li> <a href="{{ site.baseurl }}/assets/pdf/anova.pdf"> L'analyse de la variance à un facteur : théorie et pratique. </a> </li>
 	
 	<li><a href="{{ site.baseurl }}/assets/pdf/outliers.pdf">Les outliers : détection, qualification et traitement.</a> </li>
 	
@@ -59,7 +61,7 @@ image: ""
 	
 	<li>COUNT, explications et cas d'usage.</li>
 	
-	<li><a href = "/_posts/snap_firefox.md"> Uninstall the snap firefox and let geckodriver find your profile. </a></li>
+	<li><a href = "{{ site.baseurl }}/assets/pdf/firefox.pdf"> Uninstall the snap firefox and let geckodriver find your profile. </a></li>
 	<ul><p style="font-size: 10px;"> Lors de l'utilisation de selenium, il se peut que votre geckodriver ne trouve pas le chemin vers votre profil Firefox. Pour cause, celui-ci est contenu dans le snap firefox, rendant sa détection difficile ; sauf si vous utilisez Pycharm ou VS code. Vous avez alors deux solutions : spécifier le chemin d'accès à votre webdriver lors de son initialisation ou désinstaller le snap Firefox pour installer une version deb de Firefox. La première solution étant directe et simple, je vous propose un tutoriel pour mettre en place la version deb de Firefox.</p></ul>
 	
 	

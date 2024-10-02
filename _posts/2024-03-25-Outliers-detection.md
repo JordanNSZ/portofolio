@@ -484,7 +484,7 @@ Le schéma suivant reprend le chemin décisionnel pour le traitement des erreurs
 ![arbre de décison]({{ site.baseurl }}/assets/img/decision_tree.png "Arbre de décision pour le traitement des erreurs de saisie.")
 
 <figure>
-	<img src="/assets/img/decision_tree.png" alt=""> 
+	<img src="{{ site.baseurl }}/assets/img/decision_tree.png" alt=""> 
 	<figcaption>This is an example figcaption</figcaption>
 </figure>
 
@@ -504,6 +504,7 @@ Pour illustrer ce point, nous allons comparer, pour chaque méthode d'imputation
 Voici les résultats de l'imputation des valeurs aberrantes pour successivement, 50, 122 et 321 observations. 
 
 ![]({{ site.baseurl }}/assets/img/outliers_detection/imputation_50.png)
+
 ![]({{ site.baseurl }}/assets/img/outliers_detection/imputation_122.png)
 
 On observe que lorsque le nombre de valeurs aberrantes est faible, l'imputation par la moyenne (ou la médiane) est plus conservatrice (à l'égard de la distribution) que la méthode par le k plus proches voisins. Notamment, la **variation de l'écart-type est plus importante avec la méthode des k plus proches voisins**. Cependant, lorsque le nombre de valeurs aberrantes augmente (505 observations, soit à peine 1.3% de l'effectif total), l'imputation par les knn est bien plus protectrice à l'égard de l'écart-type de la distribution. En effet, alors que l'écart-type varie de 0.0062 unités avec une imputation par la moyenne (ou la médiane), il varie de seulement 0.0042 unités avec une imputation par les k plus proches voisins. Notez tout de même que l'impact sur la moyenne de la distribution est bien plus important avec l'algorithme des k plus proches voisins, quel que soit le nombre d'observations à imputer. 
@@ -548,20 +549,29 @@ Merci d'avoir lu cette note ! À bientot !
 
 ## Références. 
 
-Seo, Songwon. A review and comparison of methods for detecting outliers in univariate data sets. Diss. University of Pittsburgh, 2006.
-Singh, Karanjit, and Shuchita Upadhyaya. "Outlier detection: applications and techniques." International Journal of Computer Science Issues (IJCSI) 9.1 (2012): 307.
+- Seo, Songwon. A review and comparison of methods for detecting outliers in univariate data sets. Diss. University of Pittsburgh, 2006.
 
-Tukey, J.W.: Exploratory Data Analysis. Addison-Wesley, Reading, MA (1977)
-Grubbs, Frank E. "Procedures for detecting outlying observations in samples." Technometrics 11.1 (1969): 1-21.
-Tietjen, Gary L., and Roger H. Moore. "Some Grubbs-type statistics for the detection of several outliers." Technometrics 14.3 (1972): 583-597.
-Rosner, Bernard. "Percentage points for a generalized ESD many-outlier procedure." Technometrics 25.2 (1983): 165-172.
+- Singh, Karanjit, and Shuchita Upadhyaya. "Outlier detection: applications and techniques." International Journal of Computer Science Issues (IJCSI) 9.1 (2012): 307.
+
+- Tukey, J.W.: Exploratory Data Analysis. Addison-Wesley, Reading, MA (1977)
+
+- Grubbs, Frank E. "Procedures for detecting outlying observations in samples." Technometrics 11.1 (1969): 1-21.
+
+- Tietjen, Gary L., and Roger H. Moore. "Some Grubbs-type statistics for the detection of several outliers." Technometrics 14.3 (1972): 583-597.
+
+- Rosner, Bernard. "Percentage points for a generalized ESD many-outlier procedure." Technometrics 25.2 (1983): 165-172.
 
 ## Sitographie.
 
 https://cedric.cnam.fr/vertigo/Cours/ml/coursDonneesManquantes.html
+
 https://lemakistatheux.wordpress.com/category/tests-statistique-indices-de-liaison-et-coefficients-de-correlation/les-tests-pour-la-detection-doutliers/
+
 https://www.claret.ca/fr/publications/utiliser-des-echelles-logarithmiques-pour-les-graphiques-de-prix-dactions/
+
 http://www.parisschoolofeconomics.eu/docs/tenand-marianne/modeles-en-log.pdf
+
 https://www.jmp.com/fr_fr/statistics-knowledge-portal/exploratory-data-analysis/histogram.html
+
 
 [^1]: Pour rappel, si le coefficient est inférieur à $0$, asymétrie à gauche ; si le coefficient est supérieur à $0$, asymétrie à droite.
