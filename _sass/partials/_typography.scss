@@ -113,15 +113,15 @@ h6, .h6 {
 }
 
 blockquote {
-  font-size: 1em; // 20px / 16px
-  line-height: 1; // 25px / 20px
+  font-size: 0.8em; // 20px / 16px
+  line-height: 0.9; // 25px / 20px
   padding: 0;  
 }
 
 @media (min-width: 23.75em) {
   blockquote {
-    font-size: 1.1em; // 24px / 16px
-    line-height: 1.15; // 35px / 24px
+    font-size: 0.8em; // 24px / 16px
+    line-height: 0.9; // 35px / 24px
   }
 }
 

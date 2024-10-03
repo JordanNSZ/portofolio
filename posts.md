@@ -23,18 +23,19 @@ image: ""
   	
   	<h1> Analyse inférentielle </h1>
 
-		<li> L'<a href="{{ site.baseurl }}/assets/pdf/ajustement_pvalues.pdf">ajustement des pvalues</a> dans le cadre d'une comparaison multiple </li>
+		<li> <a href="{{ site.baseurl }}/assets/pdf/ajustement_pvalues.pdf">L'ajustement des pvalues dans le cadre d'une comparaison multiple </a> </li>
+		<ul><p style="font-size: 16px;"> Lorsqu'on réalise un test post-hoc, on doit ajuster les pvalues des tests. Cette note revient sur les fondements et l'importance de cet ajustement.</p></ul>
   	
 	  	<li>Un test statistique, c'est quoi ?</li>
-		<ul><p style="font-size: 16px;"> présente les concepts fondamentaux des tests statistiques. Il explique comment ces tests sont utilisés pour évaluer des hypothèses à partir de données échantillonnées. Les notions clés, telles que l'hypothèse nulle, l'hypothèse alternative, la valeur p, et les seuils de significativité, sont abordées de manière claire. L'article illustre également l'importance des tests dans la prise de décision scientifique, en mettant l'accent sur la rigueur et la méthodologie pour éviter des conclusions erronées.</p></ul>
+		<ul><p style="font-size: 16px;"> Cet article présente les concepts fondamentaux des tests statistiques. Il explique comment ces tests sont utilisés pour évaluer des hypothèses à partir de données échantillonnées. Les notions clés, telles que l'hypothèse nulle, l'hypothèse alternative, la valeur p, et les seuils de significativité, sont abordées. L'article illustre également l'importance des tests dans la prise de décision scientifique, en mettant l'accent sur la rigueur et la méthodologie pour éviter des conclusions erronées.</p></ul>
 	  	
 	  	<li> Études de Cas : la défaillance machine - Test de conformité à une moyenne. </li>
 		<ul> <p style="font-size: 16px;"> Cette étude de cas propose de détecter la défaillance machine (doseuse ou fraiseuse) grâce à l'utilisation d'un test de conformité à une moyenne. Notamment, avec deux échantillons, l'un de <a href="{{ site.baseurl }}/assets/pdf/conformite_petit_echantillon.pdf"> petite taille </a>, l'autre de <a href="{{ site.baseurl }}/assets/pdf/conformite_grand_echantillon.pdf"> grande taille </a>, une application est proposée.</p> </ul>
 		
-		<li>Tests de conformité</li>
+		<li>Tests de conformité.</li>
 		<ul> <p style="font-size: 16px;"> Les tests de conformités sont très utiles lorsqu'on souhaite comparer le paramètre d'un échantillon à une cible - moyenne, variance et proportion. Ils permettent de détecter des défaillances de machine ou de production, par exemple. Cet article reprend les fondements de ces tests et présente quelques cas d'usage.  </p> </ul>
 	  	
-	  	<li> <a href="{{ site.baseurl }}/assets/pdf/KruskalWallis_LoyerLyon.pdf"> Étude de Cas </a> : le prix moyen au mètre carré par arrondissement. </li>
+	  	<li> <a href="{{ site.baseurl }}/assets/pdf/KruskalWallis_LoyerLyon.pdf"> Étude de Cas : le prix moyen au mètre carré par arrondissement. </a> </li>
 		<ul> <p style="font-size: 16px;"> En utilisant des données réelles d'annonces immobilières, on cherche à savoir si les prix au mètre carré par arrondissement (9) sont significativiement différents. Pour répondre à cette interrogation, il est courant d'utiliser l'Anova. Après avoir nettoyé les données, on s'intéresse à vérifier les conditions d'application d'une analyse de la variance (anova). Les résidus du modèle n'étant pas normalement distribués on utilise un test de Kruskal-Wallis ; on conclut à l'existence d'une différence significative entre au moins 2 arrondissements. Finalement, les tests post-hoc mettent en évidence qu'il existe bien une différence statistiquement significative entre le prix moyen au mètre carré du 8ème et du 6ème arrondissement. </p> </ul>
 		
 		<li>Le test de Kruskal-Wallis : une alternative non-paramétrique à l'Anova.</li>
@@ -66,7 +67,7 @@ image: ""
   	
   	<h1> SQL </h1>
   	
-	  	<li> <a href="{{ site.baseurl }}/assets/pdf/count.pdf">COUNT</a>, explications et cas d'usage.</li>
+	  	<li> <a href="{{ site.baseurl }}/assets/pdf/count.pdf">COUNT, explications et cas d'usage. </a> </li>
 	  	<ul> <p style="font-size: 16px;"> La clause COUNT permet de dénombrer les entrées d'une table ou les entrées non-nulles d'un attribut. De plus, contrairement à ce qui est parfois dit, l'usage de COUNT(*) ou COUNT(3) ne diffère en rien, nous verrons pourquoi. </p> </ul>
 	  	
 	  	<li> <a href="{{ site.baseurl }}/assets/pdf/joins.pdf"> Fusion et acquisition de données en SQL.</a></li>
@@ -74,10 +75,10 @@ image: ""
 	  	
 	  	<li>Les fonctions de fenêtrage en SQL.</li>
 	  	
-	  	<li> <a href="{{ site.baseurl }}/assets/pdf/case_when.pdf">Case When</a> : explications et cas d'usage. </li>
+	  	<li> <a href="{{ site.baseurl }}/assets/pdf/case_when.pdf">Case When : explications et cas d'usage. </a> </li>
 	  	<ul> <p style="font-size: 16px;"> La clause CASE WHEN est très utile en SQL. Notamment, elle permet d'attribuer une valeur en fonction de la réalisation d'une condition. Dans cet article nous allons aborder les cas d'usage avec les clauses SELECT, WHERE, GROUP BY, HAVING et ORDER BY. </p> </ul>
 	  	
-	  	<li>Les <a href="{{ site.baseurl }}/assets/pdf/ctes.pdf">CTES</a>, explications et cas d'usage.</li>
+	  	<li>Les <a href="{{ site.baseurl }}/assets/pdf/ctes.pdf">CTES, explications et cas d'usage. </a> </li>
 	  	<ul> <p style="font-size: 16px;"> Les tables d'expression commune sont largement utilisées pour qugmenter la lisibilité des requêtes à la logique complexe (requêtes imbriquées). Il est souvent mentionnée que ces CTEs permettent un gain de performance. Pourtant, ce n'est pas forcément vrai. Nous verrons différents exemples de requêtes imbriquées. Puis, nous aborderons l'utilité des CTEs. Finalement, nous discuterons du gain de performance apporté par le CTEs. </p> </ul>
   	
   	<h1> Extraction de données </h1>
