@@ -32,7 +32,7 @@ alpha = 0.05
 ```
 Pour accéder au notebook de l'étude de cas, c'est par <a href="{{ site.baseurl }}/assets/pdf/conformite_petit_echantillon.pdf"> ici </a>. 
 ## Statistique de test.
-Le contrôleur qualité va tester la différence de moyenne entre celle observée et la (moyenne de) référence. Toutefois, il s’intéresse à cette différence en unité d’écart-type à la moyenne. La statistique de test est donc égale à :
+Le contrôleur qualité va tester la différence entre la moyenne observée et la moyenne de référence. Toutefois, il s’intéresse à cette différence en unité d’écart-type à la moyenne. La statistique de test est donc égale à :
 
 $$t = \frac{moy_{obs} - moy_{cible}}{\frac{\sigma}{\sqrt{n}}},$$
 
@@ -52,6 +52,7 @@ La contrôleur souhaite vérifier que la moyenne ne s'écarte en aucun cas de ce
 Formellement, le contrôleur qualité pose le jeu des hypothèses de son test statistique :
 
 $$H_0 : moy_{obs} = moy_{cible},$$
+
 $$H_1 : moy_{obs} \neq moy_{cible}.$$
 
 La **moyenne cible** est **0.5mm**, la **moyenne observée** vaut **0.53mm**. 

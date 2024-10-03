@@ -44,9 +44,10 @@ Selon les contextes, on peut vouloir vérifier que cette différence observée e
 Dans notre contexte, il s’agit d’un test bilatéral. Sous l’hypothèse nulle, les deux moyennes sont identiques : moyenne observée = moyenne de référence. L’hypothèse alternative (celle qu’on souhaite démontrer) stipule que les deux moyennes sont différentes. Formellement,
 
 $$H_0 : moy_{obs} = moy_{cible},$$
+
 $$H_1 : moy_{obs} \neq moy_{cible}.$$
 
-La moyenne cible vaut 58mm et la moyenne observée 58.2mm. 
+La **moyenne cible** vaut **58mm** et la moyenne observée **58.2mm**. 
 
 ### Risque d’erreur.
 Le **risque d’erreur** est un **risque auquel on accepte de se soumettre lors du rejet de l’hypothèse nulle**. Précisément, avec un risque d’erreur de 5%, on accepte de rejeter l’hypothèse nulle à tord avec 5% de chances. 
@@ -58,7 +59,7 @@ alpha = 0.05
 ```
 
 ### Validité du test. 
-Avant de fournir la statistique test, sachez que la validité du test repose sur la distribution normale de la moyenne observée. Ainsi, si votre **échantillon est suffisamment grand (n>30)** vous pouvez appliquer le Théorème Central Limite (TCL) : il stipule qu’à mesure que l’échantillon croit (à l’infini) l’espérance de moyennes de sous échantillons est normalement distribuée quel que soit la distribution initiale des sous-échantillons indépendants[^1]. Cependant, si votre **échantillon est petit (n<30)** vous devez vérifier que sa distribution est gaussienne pour ne pas compromettre la validité de vos conclusions. 
+Avant de fournir la statistique test, sachez que la validité du test repose sur la distribution normale de la moyenne observée. Ainsi, si votre **échantillon est suffisamment grand (n>30)** vous pouvez appliquer le Théorème Central Limite (TCL) : il stipule qu’à mesure que l’échantillon croît (à l’infini), *la somme de variables aléatoires indépendantes et indentiquement distribués tend vers une distribution gaussienne*[^1]. Cependant, si votre **échantillon est petit (n<30)** vous devez vérifier que sa distribution est gaussienne pour ne pas compromettre la validité de vos conclusions. 
 
 Également, la statistique de test repose sur l’**écart type de la population**. Aussi, si vous ne connaissez pas la variance de la population vous devez fournir une **estimation sans biais** de ce paramètre. C’est-à-dire que vous devez corriger la variance de l’échantillon d’un facteur . 
 
