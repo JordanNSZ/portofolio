@@ -2,6 +2,11 @@
 layout: default
 title: Posts
 image: ""
+toc:
+  min_level: 1
+  max_level: 6
+  ordered_list: false
+  no_back_to_top: true
 ---
 
 <div class="post">
@@ -9,6 +14,14 @@ image: ""
 	<p class="intro">Passionné par la statistique, je suis le créateur de la chaîne <a href="www.linkedin.com/in/Statisserie"><b>Statisserie</b></a>. Ce projet vise à rendre la statistique utile et accessible à toutes et tous. Vous trouverez sur cette page quelques posts récents liés à cette chaîne et plus encore. <b>Bonne lecture !</b> </p>
 	<p> Et n'oubliez pas : <i>la statistique c'est comme la pâtisserie, dans les bonnes conditions et avec les bons ingrédients on fait des choses formidables</i>.</p>
 	<p> Si vous avez des questions ou des commentaires, n'hésitez pas à me  <a href="mailto:jordan.nagadzina.sanchez@gmail.com">contacter</a>.</p>
+	
+
+	<!-- Sommaire généré automatiquement -->
+	<div id="toc">
+	  {% toc %}
+	</div>
+	
+<!--
 	<ul>
 	<h4>Posts à venir</h4>
 	</ul>
@@ -16,10 +29,9 @@ image: ""
   		<li>RFM et CLV.</li>
   		<li>RANK() vs DENSE_RANK()</li>
   		<Li> L'analyse des correspondances multiples (ACM) </li>
-  	
-  	<ul>
-  	<h3>Posts récents</h3>
-  	</ul>
+-->
+	
+  	<br>
   	
   	<h1> Analyse inférentielle </h1>
 
@@ -45,10 +57,10 @@ image: ""
 	  	<li>Tests d'homogénéité de deux proportions : le test du Chi-2 et le test exact de Fisher.</li>
 	  	
 	  	<li> Le test de Wilcoxon - test d'homogénéité non-paramétrique. </li>
-		<ul> <p style="font-size: 16px;"> Tester l'égalité de deux paramètres statistiques est courant dans de nombreux domaines. Une telle analyse inférentielle peut permettre de répondre à la question suivante : existe-t-il une différence statistiquement significative entre les deux moyennes observées ? La différence de moyenne observée est-elle le fruit du hasard ou une réalité généralisable à l'ensemble de la population ? Cette note reprend les fondements de l'usage du test de Wilcoxon(-Mann-Whitney). Il est utilisé pour comparer au plus 2 sous-échantillons d'après leur moyenne lorsqu'ils ne sont pas normalement distribués.</p> </ul>
+		<ul> <p style="font-size: 16px;"> Tester l'égalité de deux paramètres statistiques est courant dans de nombreux domaines. Une telle analyse inférentielle peut permettre de répondre à la question suivante : existe-t-il une différence statistiquement significative entre les deux moyennes observées ? La différence de moyenne observée est-elle le fruit du hasard ou une réalité généralisable aux populations parentes ? Cette note reprend les fondements de l'usage du test de Wilcoxon(-Mann-Whitney). Il est utilisé pour comparer au plus 2 sous-échantillons d'après leur moyenne lorsqu'ils ne sont pas normalement distribués.</p> </ul>
 		
 		<li>Le test t de Student et le test de Welch - tests d'homogénéité paramétriques.</li>
-		<ul> <p style="font-size: 16px;"> Tester l'égalité de deux paramètres statistiques est courant dans de nombreux domaines. Une telle analyse inférentielle peut permettre de répondre à la question suivante : existe-t-il une différence statistiquement significative entre les deux moyennes observées ? La différence de moyenne observée est-elle le fruit du hasard ou une réalité généralisable à l'ensemble de la population ? Cette note reprend les fondements de l'usage du test t de Student. Ils sont utilisés pour comparer au plus 2 sous-échantillons d'après leur moyenne lorsqu'ils sont normalement distribués et à variance homogène. Enfin, l'usage du test de Welch est abordé pour le cas de deux sous-échantillons gaussien et hétéroscédastique.</p> </ul>
+		<ul> <p style="font-size: 16px;"> Tester l'égalité de deux paramètres statistiques est courant dans de nombreux domaines. Une telle analyse inférentielle peut permettre de répondre à la question suivante : existe-t-il une différence statistiquement significative entre les deux moyennes observées ? La différence de moyenne observée est-elle le fruit du hasard ou une réalité généralisable aux populations parentes ? Cette note reprend les fondements de l'usage du test t de Student. Il est utilisé pour comparer au plus 2 sous-échantillons d'après leur moyenne lorsqu'ils sont normalement distribués et à variance homogène. Enfin, l'usage du test de Welch est abordé pour le cas de deux sous-échantillons gaussien et hétéroscédastique.</p> </ul>
 	  	
 	  	
   	<h1> Analyse exploratoire </h1>
@@ -79,7 +91,7 @@ image: ""
 	  	<ul> <p style="font-size: 16px;"> La clause CASE WHEN est très utile en SQL. Notamment, elle permet d'attribuer une valeur en fonction de la réalisation d'une condition. Dans cet article nous allons aborder les cas d'usage avec les clauses SELECT, WHERE, GROUP BY, HAVING et ORDER BY. </p> </ul>
 	  	
 	  	<li>Les <a href="{{ site.baseurl }}/assets/pdf/ctes.pdf">CTES, explications et cas d'usage. </a> </li>
-	  	<ul> <p style="font-size: 16px;"> Les tables d'expression commune sont largement utilisées pour qugmenter la lisibilité des requêtes à la logique complexe (requêtes imbriquées). Il est souvent mentionnée que ces CTEs permettent un gain de performance. Pourtant, ce n'est pas forcément vrai. Nous verrons différents exemples de requêtes imbriquées. Puis, nous aborderons l'utilité des CTEs. Finalement, nous discuterons du gain de performance apporté par le CTEs. </p> </ul>
+	  	<ul> <p style="font-size: 16px;"> Les tables d'expression commune sont largement utilisées pour augmenter la lisibilité des requêtes à la logique complexe (requêtes imbriquées). Il est souvent mentionnée que ces CTEs permettent un gain de performance. Pourtant, ce n'est pas forcément vrai. Nous verrons différents exemples de requêtes imbriquées. Puis, nous aborderons l'utilité des CTEs. Finalement, nous discuterons du gain de performance apporté par le CTEs. </p> </ul>
   	
   	<h1> Extraction de données </h1>
   	
