@@ -11,8 +11,8 @@ toc:
 
 <div class="post">
 	<p class="intro">Passionné par la statistique, je suis le créateur de la chaîne <a href="www.linkedin.com/in/Statisserie"><b>Statisserie</b></a>. Ce projet vise à rendre la statistique utile et accessible à toutes et tous. Vous trouverez sur cette page quelques posts récents liés à cette chaîne et plus encore. <b>Bonne lecture !</b> </p>
-	<p> Et n'oubliez pas : <i>la statistique c'est comme la pâtisserie, dans les bonnes conditions et avec les bons ingrédients on fait des choses formidables</i>.</p>
-	<p> Si vous avez des questions ou des commentaires, n'hésitez pas à me  <a href="mailto:jordan.nagadzina.sanchez@gmail.com">contacter</a>.</p>
+	<p> <i>La statistique c'est comme la pâtisserie, dans les bonnes conditions et avec les bons ingrédients on fait des choses formidables</i>.</p>
+
 	
 	<h2 class="no_toc pageTitle"> Balade en statisserie </h2> <!--Explorations thématiques L'univers des thèmes -->
 
