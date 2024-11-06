@@ -14,7 +14,7 @@ toc:
 	<p> <i>La statistique c'est comme la pâtisserie, dans les bonnes conditions et avec les bons ingrédients on fait des choses formidables</i>.</p>
 
 	
-	<h2 class="no_toc pageTitle"> Thèmes. </h2> <!--Explorations thématiques L'univers des thèmes -->
+	<h2 class="no_toc pageTitle"> Thèmes abordés. </h2> <!--Explorations thématiques L'univers des thèmes -->
 
 	<!-- Sommaire généré automatiquement -->
 	<div id="toc">
