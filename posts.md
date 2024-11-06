@@ -14,7 +14,7 @@ toc:
 	<p> <i>La statistique c'est comme la pâtisserie, dans les bonnes conditions et avec les bons ingrédients on fait des choses formidables</i>.</p>
 
 	
-	<h2 class="no_toc pageTitle"> Balade en statisserie </h2> <!--Explorations thématiques L'univers des thèmes -->
+	<h2 class="no_toc pageTitle"> Thèmes. </h2> <!--Explorations thématiques L'univers des thèmes -->
 
 	<!-- Sommaire généré automatiquement -->
 	<div id="toc">
@@ -72,7 +72,7 @@ toc:
 	  	
   	<h1> Analyse prédictive </h1>
 	  	
-	  	<li> Prediction de l'attrition des clients d'une entreprise de télécommunication. </li>
+	  	<li> Prédiction de l'attrition des clients d'une entreprise de télécommunication. </li>
 	  	
 	  	<li> Prédiction du prix des loyers à Lyon. </li>
 	  	
@@ -90,7 +90,7 @@ toc:
 	  	<li> <a href="{{ site.baseurl }}/assets/pdf/case_when.pdf">Case When : explications et cas d'usage. </a> </li>
 	  	<ul> <p style="font-size: 16px;"> La clause CASE WHEN est très utile en SQL. Notamment, elle permet d'attribuer une valeur en fonction de la réalisation d'une condition. Dans cet article nous allons aborder les cas d'usage avec les clauses SELECT, WHERE, GROUP BY, HAVING et ORDER BY. </p> </ul>
 	  	
-	  	<li>Les <a href="{{ site.baseurl }}/assets/pdf/ctes.pdf">CTES, explications et cas d'usage. </a> </li>
+	  	<li> <a href="{{ site.baseurl }}/assets/pdf/ctes.pdf">Les CTES, explications et cas d'usage. </a> </li>
 	  	<ul> <p style="font-size: 16px;"> Les tables d'expression commune sont largement utilisées pour augmenter la lisibilité des requêtes à la logique complexe (requêtes imbriquées). Il est souvent mentionnée que ces CTEs permettent un gain de performance. Pourtant, ce n'est pas forcément vrai. Nous verrons différents exemples de requêtes imbriquées. Puis, nous aborderons l'utilité des CTEs. Finalement, nous discuterons du gain de performance apporté par le CTEs. </p> </ul>
   	
   	<h1> Extraction de données </h1>
@@ -109,7 +109,7 @@ toc:
 		<li> <a href = "{{ site.baseurl }}/assets/pdf/firefox.pdf"> Uninstall the snap firefox and let geckodriver find your profile. </a> </li>
 		<ul><p style="font-size: 16px;"> Lors de l'utilisation de selenium, il se peut que votre geckodriver ne trouve pas le chemin vers votre profil Firefox. Pour cause, celui-ci est contenu dans le snap firefox, rendant sa détection difficile ; sauf si vous utilisez Pycharm ou VS code. Vous avez alors deux solutions : spécifier le chemin d'accès à votre webdriver lors de son initialisation ou désinstaller le snap Firefox pour installer une version deb de Firefox. La première solution étant directe et simple, je vous propose un tutoriel pour mettre en place la version deb de Firefox.</p></ul>
 		
-		<li> Initialisation d'un <a href = "{{ site.baseurl }}/assets/pdf/venv.pdf">environnement virtuel</a> python. </li>
+		<li> <a href = "{{ site.baseurl }}/assets/pdf/venv.pdf">Initialisation d'un environnement virtuel python.</a> </li>
 		<ul> <p style="font-size: 16px;"> Cet article décrit les étapes de l'ininitalisation et de la gestion d'un environnement virtuel python. </p></ul>
 		
 	

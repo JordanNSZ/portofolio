@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Étude de cas : défaillance machine - test de conformité à une moyenne pour un petit échantillon."
-date: 2024-09-27
+
 categories: ["Analyse de données", "Science des données", "Test de conformité"]
 tags: ["Python", "Test statistiques", "Conformtié"]
 description: "Cette étude de cas reprend la mise en place du test de conformité à une moyenne. Notamment, dans le cas d'un échantillon de petite taille, on s'intéresse à la défaillance d'une fraiseuse lors de l'usinage d'une pièce."
@@ -9,9 +9,9 @@ description: "Cette étude de cas reprend la mise en place du test de conformit�
 
 # Test de conformité d’une moyenne. 
 
-Une entreprise usine des pièces dont le **diamètre** doit être de **0.5mm**. Pour **vérifier la qualité de la production et le bon réglage de la fraiseuse**, le contrôleur **soustrait aléatoirement 25 pièces après usinage**. Il relève le diamètre pour chacune d’entre elle. Le **diamètre moyen** est de **0.53mm**. L’écart étant suffisamment important pour envisager la défaillance de la fraiseuse, il décide de **vérifier qu’elle ne soit pas simplement une variation liée à l’échantillon sélectionné**. Le contrôleur doit donc mener une analyse inferentielle pour répondre à la question suivante : la moyenne observée est-elle imputable à l’ensemble des pièces usinées ? Autrement dit, la différence de moyenne relevée est-elle observable dans la population générale ? Le contrôleur tolère un **risque de répondre à tord** de **5%**. 
+Une entreprise usine des pièces dont le **diamètre** doit être de **0.5mm**. Pour **vérifier la qualité de la production et le bon réglage de la fraiseuse**, le contrôleur **soustrait aléatoirement 25 pièces après usinage**. Il relève le diamètre pour chacune d’entre elle. Le **diamètre moyen** est de **0.53mm**. L’écart étant suffisamment important pour envisager la défaillance de la fraiseuse, il décide de **vérifier qu’elle ne soit pas simplement liée à l’échantillon sélectionné**. Le contrôleur doit donc mener une analyse inferentielle pour répondre à la question suivante : la moyenne observée est-elle imputable à l’ensemble des pièces usinées ? Autrement dit, la différence de moyenne relevée est-elle observable dans la population générale ? Le contrôleur tolère un **risque de répondre à tord** de **5%**. 
 
-Voici les donénes recueillis par le contrôleur qualité. 
+Voici les données recueillies par le contrôleur qualité. 
 
 ```python
 import pandas as pd
@@ -31,12 +31,13 @@ display(moy_obs)
 alpha = 0.05
 ```
 Pour accéder au notebook de l'étude de cas, c'est par <a href="{{ site.baseurl }}/assets/pdf/conformite_petit_echantillon.pdf"> ici </a>. 
+
 ## Statistique de test.
-Le contrôleur qualité va tester la différence entre la moyenne observée et la moyenne de référence. Toutefois, il s’intéresse à cette différence en unité d’écart-type à la moyenne. La statistique de test est donc égale à :
+Le contrôleur qualité va tester la différence entre la moyenne observée et la moyenne de référence. Toutefois, il s’intéresse à cette différence en unité d’erreur standard. La statistique de test est donc égale à :
 
 $$t = \frac{moy_{obs} - moy_{cible}}{\frac{\sigma}{\sqrt{n}}},$$
 
-où $$\sigma$$ est l’**l’écart-type de la populaton**.
+où $$\sigma$$ est l’**l’écart-type de la population**.
 
 Cette statistique de test suit une **loi de student à n-1 degrés de liberté** (ddl) : $$t_{n-1ddl;0.05}$$. 
 

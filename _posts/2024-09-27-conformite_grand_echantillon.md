@@ -38,10 +38,10 @@ Pour accéder au notebook de l'étude de cas, c'est par <a href="{{ site.baseurl
 ## Test d’hypothèses.
 Pour répondre à la problématique du défaut d’usinage, on peut utiliser un **test de conformité à la moyenne**. Il s’agit de **vérifier que la différence observée n’est pas spécifique à l’échantillon sélectionné et donc imputable à la population globale**. 
 
-Selon les contextes, on peut vouloir vérifier que cette différence observée est strictement plus grande ou plus petite que le paramètre d’une population cible. Par exemple, s’il s’agit de vérifier la conformité d’une ampoule, il ne faut pas que sa durée de vie soit inférieure mais si elle est supérieure, tant mieux. À l’inverse, si on s’intéresse au poids moyen contenu dans un sachet de bonbon, ni l’entreprise, ni le client ne voudront être lésés : la quantité moyenne ne devra pas différée de celle convenu lors de la mise en production et de celle affichée sur l’emballage. En outre, c’est ce contexte qui va définir la structure du test statistique : soit il sera bilatéral, soit unilatéral (à gauche ou à droite). 
+Selon les contextes, on peut vouloir vérifier que cette différence observée est strictement plus grande ou plus petite que le paramètre d’une population cible. Par exemple, s’il s’agit de vérifier la conformité d’une ampoule, il ne faut pas que sa durée de vie soit inférieure mais si elle est supérieure, tant mieux. À l’inverse, si on s’intéresse au poids moyen contenu dans un sachet de bonbons, ni l’entreprise, ni le client ne voudront être lésés : la quantité ne devra pas différée de celle convenue lors de la mise en production et de celle affichée sur l’emballage. En outre, c’est ce contexte qui va définir la structure du test statistique : soit il sera bilatéral, soit unilatéral (à gauche ou à droite). 
 
 ### Jeu des hypothèses. 
-Dans notre contexte, il s’agit d’un test bilatéral. Sous l’hypothèse nulle, les deux moyennes sont identiques : moyenne observée = moyenne de référence. L’hypothèse alternative (celle qu’on souhaite démontrer) stipule que les deux moyennes sont différentes. Formellement,
+Dans notre contexte, il s’agit d’un test bilatéral puisqu'il ne faut pas que la pièce usinée soit d'un diamètre inférieur ou supérieur à celui préscrit par le cahier des charges. Sous l’hypothèse nulle, les deux moyennes sont identiques : moyenne observée = moyenne de référence. L’hypothèse alternative (celle qu’on souhaite démontrer) stipule que les deux moyennes sont différentes. Formellement,
 
 $$H_0 : moy_{obs} = moy_{cible},$$
 
@@ -58,21 +58,22 @@ On fixe notre risque d’erreur $$\alpha$$ à 5%.
 alpha = 0.05
 ```
 
-### Validité du test. 
-Avant de fournir la statistique test, sachez que la validité du test repose sur la distribution normale de la moyenne observée. Ainsi, si votre **échantillon est suffisamment grand (n>30)** vous pouvez appliquer le Théorème Central Limite (TCL) : il stipule qu’à mesure que l’échantillon croît (à l’infini), *la somme de variables aléatoires indépendantes et indentiquement distribués tend vers une distribution gaussienne*[^1]. Cependant, si votre **échantillon est petit (n<30)** vous devez vérifier que sa distribution est gaussienne pour ne pas compromettre la validité de vos conclusions. 
-
-Également, la statistique de test repose sur l’**écart type de la population**. Aussi, si vous ne connaissez pas la variance de la population vous devez fournir une **estimation sans biais** de ce paramètre. C’est-à-dire que vous devez corriger la variance de l’échantillon d’un facteur . 
-
-Dans notre cas, l’échantillon comprend 100 individus et la variance de la population est inconnue. Nous pouvons donc appliquer le TCL et utiliser une estimation sans biais de la variance. 
-
 ### Statistique de test. 
 La statistique de test est la suivante : 
 
-$$t = \frac{moy_{obs} - moy_{cible}}{\frac{s'}{\sqrt{n}}},$$
+$$t = \frac{moy_{obs} - moy_{cible}}{\frac{\sigma}{\sqrt{n}}},$$
 
-où $$s'$$ est l’estimation sans biais de l’écart-type.
+où $$\sigma$$ est l’écart-type de la population.
 
 Cette statistique de test suit une **loi de Student à n-1 degrés de liberté** (ddl) : $$t_{n-1ddl;0.05}$$. 
+
+### Validité du test. 
+Remarquez que la validité du test repose sur la distribution normale de la moyenne observée. Ainsi, si votre **échantillon est suffisamment grand (n>30)** vous pouvez appliquer le Théorème Central Limite (TCL) : il stipule qu’à mesure que l’échantillon croît (à l’infini), *la somme de variables aléatoires indépendantes et indentiquement distribués tend vers une distribution gaussienne*[^1]. Cependant, si votre **échantillon est petit (n<30)** vous devez vérifier que sa distribution est gaussienne pour ne pas compromettre la validité de vos conclusions. 
+
+Également, la statistique de test repose sur l’**écart type de la population**. Aussi, si vous ne connaissez pas la variance de la population vous devez fournir une **estimation sans biais** de ce paramètre. C’est-à-dire que vous devez corriger la variance de l’échantillon d’un facteur $$\frac{1}{n-1}$$. 
+
+Dans notre cas, l’échantillon comprend 100 individus et la variance de la population est inconnue. Nous pouvons donc appliquer le TCL et utiliser une estimation sans biais de la variance. 
+
 
 ### Calcul de la statistique de test t.
 Pour calculer notre statistique de test il nous manque l’estimation sans biais de l’écart-type. 
@@ -107,10 +108,12 @@ print(quantile)
 Avec un risque d'erreur de 5%, on peut rejeter l'hypothèse nulle d'égalité des moyennes. En effet, d'après les relevés effectués, nous avons suffisamment d'évidences pour conclure à la défaillance machine.
 
 ### Pvalue. 
-Calculons la probabilité d’observer une statistique au moins aussi grande. Pour ça, on va utiliser la fonction de répartition cumulative. 
+Outre la comapraison au quantile de la loi de Student, on peut calculer la probabilité d'observer une statistique au moins aussi grande. Si cette probabilité, appelée *pvalue*, est suffisamment faible, on pourra conclure qu'il est peu probable d'observer une telle différence de moyenne compte tenu des données observées. Par "suffisamment faible", comprenez inférieure au seuil de significativité fixé *a priori*. 
+
+Pour calculer la pvalue, on va utiliser la fonction de répartition cumulative de la loi de Student.
 
 ```python
-pvalue = 2 * (1-stats.f.cdf(1-(0.05/2), 100-1))
+pvalue = 2 * (1-stats.t.cdf(1-(0.05/2), 100-1))
 print(pvalue)
 
     1.3766765505351941e-14
@@ -119,7 +122,7 @@ print(pvalue)
 La probabilité d'observer une statistique de test au moins aussi extrême est largement inférieur au seuil de singificativité de 5%. On peut donc conclure à la défaillance machine. 
 
 ## Intervalle de confiance. 
-Pour vérifier la conformité de notre usinage on peut utiliser une autre méthode inferentielle : l’intervalle de confiance. On fixe le risque d’erreur à 5%. L’intervalle de confiance à 95% est :
+Enfin, pour vérifier la conformité de notre usinage, on peut utiliser une autre méthode inferentielle : l’intervalle de confiance. L’**intervalle de confiance à 95%** est :
 
 $$IC_{95} = moy_{obs} \pm t_{n-1 ddl ; \alpha} * \frac{s'}{\sqrt{n}}.$$
 
@@ -138,7 +141,7 @@ print(ic_inf, moy_cible, ic_sup)
     58.0
     58.26795148964892
 ```
-Effectivement, la moyenne cible n'appartient pas à l'intervalle de confiance de notre moyenne observée. Il est donc peu probable qu'on conclut à tord à la défaillance machine.
+Effectivement, la moyenne cible n'appartient pas à l'intervalle de confiance de notre moyenne observée. Il est donc peu probable de conclure à tord à la défaillance machine.
 
 ## Test de Student pour 1 échantillon. 
 Finalement, et pour vérifier notre démarche, on peut utiliser la fonction *ttest_1samp* du module *scipy.stats*. 
@@ -164,8 +167,8 @@ display(results.confidence_interval(confidence_level=0.95))
 ```
 Nos observations précédentes étaient bonnes. Avec un risque d'erreur de 5%, on peut rejeter l'hypothèse nulle. On conclut donc à la défaillance significative de la machine.
 
-Voila, nous sommes arrivés au bout de notre Test de conformité à une moyenne.
+Voila, nous sommes arrivés au bout de notre *test de conformité à une moyenne*.
 
  À bientôt ! 🤓
  
- [^1]: Par exemple, si on considère les distributions des salaires de 100 entreprises, celles-ci ont peu de chance d'être normales puisque des hauts salaires étirent notre distribution. Cependant, si on prend le salaire moyen de chacune des entreprises, alors il est très probable que sa distribution ressemble à une gaussienne. 
+ [^1]: Par exemple, si on considère les distributions des salaires de 100 entreprises, celles-ci ont peu de chance d'être normales puisque des hauts salaires étirent leur distribution. Cependant, si on prend le salaire moyen de chacune des entreprises, alors il est très probable que leur distribution ressemble à une gaussienne. 

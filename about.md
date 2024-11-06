@@ -5,8 +5,8 @@ title: About Me
 
 <div class="post">
 	<h1 class="pageTitle"></h1>
-	<p class="intro">Data scientist, passionné par la statistique et les données, je suis le créateur de la chaîne <a href="https://www.linkedin.com/in/Statisserie"><b>Statisserie</b></a>.</p>
-	<p> Mon objectif : acquérir des données et les transformer en informations claires et exploitables. </p>
+	<p class="intro">Data scientist, passionné par la statistique et la science des données, j'utilise Python, R et SQL pour répondre aux besoins des entreprises. <br> Mon objectif est de transformer les données en informations à forte valeur ajoutée pour accompagner la prise de décision .</p>
+	
 	<!--<p> À la recherche d'une <b>expertise analytique</b> ou simplement l'envie d'explorer mes publications ? N'hésitez pas à me  <a href="mailto:jordan.nagadzina.sanchez@gmail.com">contacter</a> pour discuter de vos projets et de vos besoins en analyse de données !</p> -->
 	<br> 
 	
@@ -18,7 +18,7 @@ title: About Me
     <ul>
         <h4>Emplois</h4>
        
-            <li>Doctorant-Chercheur - Université Jean-Monnet (Saint-Étienne). (Oct. 2020-Sept. 2023)</li>
+            <li>Doctorant-Chercheur en Économie - Université Jean-Monnet (Saint-Étienne). (Oct. 2020-Sept. 2023)</li>
             <li>Enseignant Macroéconomie monétaire et financière - EM Lyon Business School (Mars 2022-Mai 2022)</li>
             <li>Enseignant Environnement Économique (macroéconomie) - IUT Roannes (Oct. 2021-Mai 2022)</li>
       
